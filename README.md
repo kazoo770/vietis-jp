@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VIETISジャパン コーポレートサイト
 
-## Getting Started
+株式会社VIETISジャパンのコーポレートサイト。Next.js App Router で実装。
 
-First, run the development server:
+---
+
+## URL
+
+| 環境 | URL |
+|---|---|
+| 開発・確認用 | https://vietis-jp.vercel.app |
+| 本番（予定） | https://vietis.co.jp |
+
+---
+
+## 技術スタック
+
+- **フレームワーク**: Next.js (App Router)
+- **スタイリング**: バニラCSS（CSS-in-JSX `<style>`タグ方式）
+- **フォント**: Noto Sans JP + Roboto（Google Fonts CDN）
+- **フォーム**: Formspree
+- **予約カレンダー**: Spir
+- **デプロイ**: Vercel（GitHub連携・自動デプロイ）
+- **CMS（予定）**: Strapi
+
+---
+
+## ローカル起動
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで `http://localhost:3000` を開く。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ディレクトリ構成
 
-## Learn More
+```
+src/
+├── app/
+│   ├── page.tsx               # トップページ
+│   ├── about/                 # 企業情報
+│   ├── blog/
+│   │   ├── page.tsx           # ブログ一覧
+│   │   └── [slug]/page.tsx    # ブログ記事（現在001のみ実装）
+│   ├── cases/
+│   │   ├── page.tsx           # 実績一覧
+│   │   └── example-01〜17/    # 実績詳細（17件）
+│   ├── contact/               # お問い合わせ
+│   ├── consultation/          # 無料相談予約（Spir埋め込み）
+│   ├── download/              # 資料請求
+│   ├── product/
+│   │   ├── page.tsx           # プロダクト一覧
+│   │   ├── keyspider/         # Keyspider
+│   │   └── menraku/           # Menraku
+│   ├── recruit/               # 採用
+│   ├── service/
+│   │   ├── page.tsx           # サービス一覧
+│   │   ├── ai-development/
+│   │   ├── ai-driving-suite/
+│   │   ├── dev-app/
+│   │   ├── dev-system/
+│   │   ├── dev-web/
+│   │   ├── support-ai/
+│   │   ├── support-system/
+│   │   └── support-web/
+│   └── privacy-policy/
+├── components/
+│   ├── Header.tsx             # 共通ヘッダー
+│   ├── Footer.tsx             # 共通フッター
+│   ├── ContactForm.tsx        # お問い合わせフォーム（Formspree）
+│   ├── SpirWidget.tsx         # Spirカレンダー埋め込み
+│   ├── FaqInit.tsx            # FAQアコーディオン（3パターン対応）
+│   ├── RevealInit.tsx         # スクロールアニメーション
+│   ├── TopPageInit.tsx        # トップページ専用JS
+│   ├── BlogArticleInit.tsx    # ブログ記事ページ（TOC・SNSシェア）
+│   ├── BlogFilterInit.tsx     # ブログ一覧フィルター
+│   ├── CasesFilterInit.tsx    # 実績一覧フィルター
+│   └── ScrollRestoration.tsx  # スクロール位置復元
+public/
+├── img/client/                # クライアントロゴ（マーキー用）
+└── img/cert/                  # 認証ロゴ（CMMI・ISO・Pマーク）
+scripts/
+└── gen_blog001.py             # ブログHTML→page.tsx変換スクリプト
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## デプロイ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`main` ブランチに push すると Vercel に自動デプロイされます。
 
-## Deploy on Vercel
+```bash
+git add .
+git commit -m "変更内容"
+git push
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Strapi連携（予定）
+
+### フェーズ1：ブログ
+
+- Strapi側でブログのコンテンツタイプを設計・セットアップ（ベトナム側担当）
+- StrapiのAPIエンドポイントURLを `.env.local` に設定
+- `/blog/page.tsx`（一覧）と `/blog/[slug]/page.tsx`（詳細）をAPI取得に書き換え
+
+> 現在 `/blog/[slug]/page.tsx` は記事001のみ静的実装済み。Strapi連携時はこのファイルをAPI取得に全面書き換えする。
+
+### フェーズ2：実績
+
+- 実績コンテンツタイプを設計・セットアップ（ベトナム側担当）
+- `/cases/page.tsx`（一覧）と `/cases/[slug]/page.tsx`（詳細）をAPI取得に書き換え
+
+### 環境変数
+
+`.env.local` を作成して設定：
+
+```env
+NEXT_PUBLIC_STRAPI_URL=https://your-strapi-server.com
+```
+
+---
+
+## 残タスク
+
+- [ ] ブログ記事ページ（`001`以外は404。Strapi連携で解決予定）
+- [ ] OGP画像（SNSシェア用サムネイル）
+- [ ] Google Analytics などの計測タグ
+- [ ] `vietis.co.jp` へのドメイン切り替え（Strapi連携・UI修正完了後）
