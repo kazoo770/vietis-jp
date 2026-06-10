@@ -174,7 +174,7 @@ npx create-strapi-app@latest vietis-cms --quickstart
 > // @strapi/blocks-react-renderer などのライブラリを使う場合も同様に対応すること
 > ```
 >
-> この処理は **Next.js側（ベトナム側）** で実装すること。
+> この処理は **Next.js側（日本側）** で実装すること。Strapi連携時にベトナム側からAPIのURLが共有されたら対応する。
 
 ---
 
