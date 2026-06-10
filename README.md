@@ -9,7 +9,8 @@
 | 環境 | URL |
 |---|---|
 | 開発・確認用 | https://vietis-jp.vercel.app |
-| 本番（予定） | https://vietis.co.jp |
+| 日本語本番（予定） | https://vietis.co.jp |
+| 英語本番（予定） | https://vietis.com.vn ※英語サイトはベトナム側が作成 |
 
 ---
 
