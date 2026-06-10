@@ -159,6 +159,7 @@ npx create-strapi-app@latest vietis-cms --quickstart
 | `excerpt` | Long text | ✅ | 一覧ページの抜粋文（2行表示） |
 | `content` | Rich Text (Blocks) | ✅ | 本文。h2・h3・p・ul・ol・strong を使用 |
 | `publishedDate` | Date | ✅ | 公開日（例: `2026-06-09`） |
+| `updatedAt` | - | - | 更新日。Strapiが自動管理するフィールドのため定義不要。APIレスポンスに自動で含まれる |
 | `category` | Enumeration | ✅ | カテゴリ（下記の値を設定）。表示名への変換はNext.js側で行うため `categoryLabel` は不要 |
 | `eyecatch` | Media（Single image） | ✅ | アイキャッチ画像（16:9推奨） |
 | `authorName` | Short text | ✅ | 著者名（例: `渡辺 和久`） |
