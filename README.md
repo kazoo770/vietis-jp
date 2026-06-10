@@ -104,38 +104,52 @@ git push
 
 ## Strapi連携（予定）
 
-### フェーズ1：ブログ
+### Strapiとは
 
-- Strapi側でブログのコンテンツタイプを設計・セットアップ（ベトナム側担当）
-- StrapiのAPIエンドポイントURLを `.env.local` に設定
-- `/blog/page.tsx`（一覧）と `/blog/[slug]/page.tsx`（詳細）をAPI取得に書き換え
+Strapi はオープンソースのヘッドレスCMSです。管理画面からコンテンツを登録・編集でき、REST API または GraphQL で Next.js 側からデータを取得します。
 
-> 現在 `/blog/[slug]/page.tsx` は記事001のみ静的実装済み。Strapi連携時はこのファイルをAPI取得に全面書き換えする。
+公式ドキュメント: https://docs.strapi.io
 
-#### ブログ コンテンツタイプ定義
+---
 
-サンプルページ：
-- 一覧: https://vietis-jp.vercel.app/blog
-- 詳細: https://vietis-jp.vercel.app/blog/001
+### フェーズ1：ブログ連携
 
-**Collection Type名**: `article`（または `blog-post`）
+#### ステップ1：Strapi のセットアップ
+
+```bash
+# Strapi プロジェクトを新規作成
+npx create-strapi-app@latest vietis-cms --quickstart
+```
+
+起動後、`http://localhost:1337/admin` で管理画面にアクセスして管理者アカウントを作成する。
+
+ホスティング先（Railway / Render / Strapi Cloud など）はベトナム側で選定・構築する。  
+構築完了後、StrapiサーバーのURLを日本側（渡辺）に共有すること。
+
+---
+
+#### ステップ2：コンテンツタイプの作成
+
+管理画面の **Content-Type Builder** で以下の Collection Type を作成する。
+
+**Collection Type名**: `article`
 
 | フィールド名 | 型 | 必須 | 説明 |
 |---|---|---|---|
-| `title` | Text (Short) | ✅ | 記事タイトル |
-| `slug` | UID (titleから自動生成) | ✅ | URLスラッグ（例: `kikanji-system-refresh`） |
-| `excerpt` | Text (Long) | ✅ | 一覧ページの抜粋文（2行表示） |
-| `content` | Rich Text (Blocks) | ✅ | 本文（h2・h3・p・ul・ol・strong対応） |
-| `publishedAt` | Date | ✅ | 公開日（表示形式: `2026.06.09`） |
-| `category` | Enumeration | ✅ | カテゴリ。値: `dx` / `dev` / `ai` / `culture` |
-| `categoryLabel` | Text (Short) | ✅ | カテゴリ表示名（例: `DX・業務改善`） |
-| `eyecatch` | Media (Single image) | ✅ | アイキャッチ画像（16:9推奨） |
-| `authorName` | Text (Short) | ✅ | 著者名（例: `渡辺 和久`） |
-| `authorRole` | Text (Short) | ✅ | 著者肩書き（例: `代表 / テクノロジーストラテジスト`） |
-| `authorAvatar` | Media (Single image) | | 著者アバター画像 |
-| `metaDescription` | Text (Long) | | SEO用メタディスクリプション |
+| `title` | Short text | ✅ | 記事タイトル |
+| `slug` | UID（`title` から自動生成） | ✅ | URLスラッグ（例: `kikanji-system-refresh`） |
+| `excerpt` | Long text | ✅ | 一覧ページの抜粋文（2行表示） |
+| `content` | Rich Text (Blocks) | ✅ | 本文。h2・h3・p・ul・ol・strong を使用 |
+| `publishedDate` | Date | ✅ | 公開日（例: `2026-06-09`） |
+| `category` | Enumeration | ✅ | カテゴリ（下記の値を設定） |
+| `categoryLabel` | Short text | ✅ | カテゴリ表示名（例: `DX・業務改善`） |
+| `eyecatch` | Media（Single image） | ✅ | アイキャッチ画像（16:9推奨） |
+| `authorName` | Short text | ✅ | 著者名（例: `渡辺 和久`） |
+| `authorRole` | Short text | ✅ | 著者肩書き（例: `代表 / テクノロジーストラテジスト`） |
+| `authorAvatar` | Media（Single image） | | 著者アバター画像 |
+| `metaDescription` | Long text | | SEO用メタディスクリプション |
 
-#### カテゴリ一覧
+**`category` Enumeration の値：**
 
 | value | 表示名 |
 |---|---|
@@ -144,31 +158,61 @@ git push
 | `ai` | AI・最新技術 |
 | `culture` | 社内カルチャー |
 
-#### 目次（TOC）について
-
-詳細ページの目次は `content` フィールド内の `h2` / `h3` タグから自動生成するため、Strapi側での別途フィールド定義は不要。
+> 目次（TOC）は `content` フィールド内の h2/h3 から Next.js 側で自動生成するため、Strapi側での定義は不要。
 
 ---
 
-### フェーズ2：実績
+#### ステップ3：API アクセスの許可
 
-- 実績コンテンツタイプを設計・セットアップ（ベトナム側担当）
-- `/cases/page.tsx`（一覧）と `/cases/[slug]/page.tsx`（詳細）をAPI取得に書き換え
+管理画面の **Settings > Roles > Public** で `article` の以下を許可する：
+
+- `find`（一覧取得）
+- `findOne`（個別取得）
 
 ---
 
-### 環境変数
+#### ステップ4：APIの動作確認
 
-`.env.local` を作成して設定：
+以下のエンドポイントでデータが返ることを確認する：
+
+```
+# 一覧
+GET https://your-strapi-server.com/api/articles?populate=eyecatch&sort=publishedDate:desc
+
+# 個別（slugで取得）
+GET https://your-strapi-server.com/api/articles?filters[slug][$eq]=kikanji-system-refresh&populate=*
+```
+
+---
+
+#### ステップ5：Next.js 側の環境変数設定
+
+Strapi サーバーの URL が確定したら、Next.js プロジェクトのルートに `.env.local` を作成：
 
 ```env
 NEXT_PUBLIC_STRAPI_URL=https://your-strapi-server.com
 ```
 
+その後、`/blog/page.tsx`（一覧）と `/blog/[slug]/page.tsx`（詳細）をAPI取得に書き換える作業を行う。  
+（現在 `/blog/[slug]/page.tsx` は記事001のみ静的実装済み。連携時に全面書き換えが必要。）
+
+サンプルページ（デザイン・構造の参照用）：
+- 一覧: https://vietis-jp.vercel.app/blog
+- 詳細: https://vietis-jp.vercel.app/blog/001
+
+---
+
+### フェーズ2：実績連携
+
+ブログ連携完了後に着手。コンテンツタイプ定義は別途追記予定。
+
+- `/cases/page.tsx`（一覧）と `/cases/[slug]/page.tsx`（詳細）をAPI取得に書き換え
+
 ---
 
 ## 残タスク
 
+- [ ] Strapi構築・ブログ連携（ベトナム側）
 - [ ] ブログ記事ページ（`001`以外は404。Strapi連携で解決予定）
 - [ ] OGP画像（SNSシェア用サムネイル）
 - [ ] Google Analytics などの計測タグ
