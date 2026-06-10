@@ -141,8 +141,7 @@ npx create-strapi-app@latest vietis-cms --quickstart
 | `excerpt` | Long text | ✅ | 一覧ページの抜粋文（2行表示） |
 | `content` | Rich Text (Blocks) | ✅ | 本文。h2・h3・p・ul・ol・strong を使用 |
 | `publishedDate` | Date | ✅ | 公開日（例: `2026-06-09`） |
-| `category` | Enumeration | ✅ | カテゴリ（下記の値を設定） |
-| `categoryLabel` | Short text | ✅ | カテゴリ表示名（例: `DX・業務改善`） |
+| `category` | Enumeration | ✅ | カテゴリ（下記の値を設定）。表示名への変換はNext.js側で行うため `categoryLabel` は不要 |
 | `eyecatch` | Media（Single image） | ✅ | アイキャッチ画像（16:9推奨） |
 | `authorName` | Short text | ✅ | 著者名（例: `渡辺 和久`） |
 | `authorRole` | Short text | ✅ | 著者肩書き（例: `代表 / テクノロジーストラテジスト`） |
@@ -201,20 +200,23 @@ GET https://your-strapi-server.com/api/articles?filters[slug][$eq]=kikanji-syste
 
 ---
 
-#### ステップ5：Next.js 側の環境変数設定
+#### ステップ5：完了報告
 
-Strapi サーバーの URL が確定したら、Next.js プロジェクトのルートに `.env.local` を作成：
+ステップ1〜4が完了したら、以下を日本側（渡辺）に共有すること：
 
-```env
-NEXT_PUBLIC_STRAPI_URL=https://your-strapi-server.com
-```
+- Strapi サーバーの URL
+- 管理画面のログイン情報
 
-その後、`/blog/page.tsx`（一覧）と `/blog/[slug]/page.tsx`（詳細）をAPI取得に書き換える作業を行う。  
-（現在 `/blog/[slug]/page.tsx` は記事001のみ静的実装済み。連携時に全面書き換えが必要。）
+---
 
-サンプルページ（デザイン・構造の参照用）：
-- 一覧: https://vietis-jp.vercel.app/blog
-- 詳細: https://vietis-jp.vercel.app/blog/001
+> **以降は日本側の作業**
+>
+> StrapiのURLが共有されたら、Next.jsプロジェクトのルートに `.env.local` を作成して設定する：
+> ```env
+> NEXT_PUBLIC_STRAPI_URL=https://your-strapi-server.com
+> ```
+> その後、`/blog/page.tsx`（一覧）と `/blog/[slug]/page.tsx`（詳細）をAPI取得に書き換える。
+> （現在 `/blog/[slug]/page.tsx` は記事001のみ静的実装済み。連携時に全面書き換えが必要。）
 
 ---
 
