@@ -112,10 +112,50 @@ git push
 
 > 現在 `/blog/[slug]/page.tsx` は記事001のみ静的実装済み。Strapi連携時はこのファイルをAPI取得に全面書き換えする。
 
+#### ブログ コンテンツタイプ定義
+
+サンプルページ：
+- 一覧: https://vietis-jp.vercel.app/blog
+- 詳細: https://vietis-jp.vercel.app/blog/001
+
+**Collection Type名**: `article`（または `blog-post`）
+
+| フィールド名 | 型 | 必須 | 説明 |
+|---|---|---|---|
+| `title` | Text (Short) | ✅ | 記事タイトル |
+| `slug` | UID (titleから自動生成) | ✅ | URLスラッグ（例: `kikanji-system-refresh`） |
+| `excerpt` | Text (Long) | ✅ | 一覧ページの抜粋文（2行表示） |
+| `content` | Rich Text (Blocks) | ✅ | 本文（h2・h3・p・ul・ol・strong対応） |
+| `publishedAt` | Date | ✅ | 公開日（表示形式: `2026.06.09`） |
+| `category` | Enumeration | ✅ | カテゴリ。値: `dx` / `dev` / `ai` / `culture` |
+| `categoryLabel` | Text (Short) | ✅ | カテゴリ表示名（例: `DX・業務改善`） |
+| `eyecatch` | Media (Single image) | ✅ | アイキャッチ画像（16:9推奨） |
+| `authorName` | Text (Short) | ✅ | 著者名（例: `渡辺 和久`） |
+| `authorRole` | Text (Short) | ✅ | 著者肩書き（例: `代表 / テクノロジーストラテジスト`） |
+| `authorAvatar` | Media (Single image) | | 著者アバター画像 |
+| `metaDescription` | Text (Long) | | SEO用メタディスクリプション |
+
+#### カテゴリ一覧
+
+| value | 表示名 |
+|---|---|
+| `dx` | DX・業務改善 |
+| `dev` | システム・アプリ開発 |
+| `ai` | AI・最新技術 |
+| `culture` | 社内カルチャー |
+
+#### 目次（TOC）について
+
+詳細ページの目次は `content` フィールド内の `h2` / `h3` タグから自動生成するため、Strapi側での別途フィールド定義は不要。
+
+---
+
 ### フェーズ2：実績
 
 - 実績コンテンツタイプを設計・セットアップ（ベトナム側担当）
 - `/cases/page.tsx`（一覧）と `/cases/[slug]/page.tsx`（詳細）をAPI取得に書き換え
+
+---
 
 ### 環境変数
 
