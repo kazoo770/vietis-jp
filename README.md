@@ -159,6 +159,7 @@ npx create-strapi-app@latest vietis-cms --quickstart
 | `culture` | 社内カルチャー |
 
 > **目次（TOC）について**
+> ブログ記事ページの右サイドに表示される目次のこと（参考: https://vietis-jp.vercel.app/blog/001 ）。
 > 目次は `content` フィールド内の h2/h3 から Next.js 側で自動生成するため、Strapi側でのフィールド定義は不要。
 >
 > ただし、Strapi の Rich Text を Next.js でレンダリングする際に **h2/h3 タグへ自動で `id` 属性を付与する処理** が必要。
