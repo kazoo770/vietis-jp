@@ -158,7 +158,22 @@ npx create-strapi-app@latest vietis-cms --quickstart
 | `ai` | AI・最新技術 |
 | `culture` | 社内カルチャー |
 
-> 目次（TOC）は `content` フィールド内の h2/h3 から Next.js 側で自動生成するため、Strapi側での定義は不要。
+> **目次（TOC）について**
+> 目次は `content` フィールド内の h2/h3 から Next.js 側で自動生成するため、Strapi側でのフィールド定義は不要。
+>
+> ただし、Strapi の Rich Text を Next.js でレンダリングする際に **h2/h3 タグへ自動で `id` 属性を付与する処理** が必要。
+> `id` がないと目次のリンクが機能せず、スクロール連動ハイライトも動作しない。
+>
+> 実装例：見出しテキストをスラッグ化して `id` に設定する
+> ```tsx
+> // 例: "要件定義のポイント" → id="要件定義のポイント"
+> const slugify = (text: string) => text.replace(/\s+/g, '-').toLowerCase();
+>
+> // Rich Text レンダラーで h2/h3 に id を付与
+> // @strapi/blocks-react-renderer などのライブラリを使う場合も同様に対応すること
+> ```
+>
+> この処理は **Next.js側（ベトナム側）** で実装すること。
 
 ---
 
