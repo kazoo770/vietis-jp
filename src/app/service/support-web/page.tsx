@@ -168,7 +168,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><a href="/service">サービス</a><span className="breadcrumb-sep">/</span><span aria-current="page">Webサイト運用保守</span></nav>
+      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><a href="/service">サービス</a><span className="breadcrumb-sep">›</span><span aria-current="page">Webサイト運用保守</span></nav>
       <h1 className="page-hero-h1 reveal d1">Webサイト運用保守</h1>
       <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>公開後のWebサイトを継続的に支援。コンテンツ更新・SEO改善・セキュリティ管理まで同一チームが担当します。</p>
       <div className="page-hero-cta reveal d3">

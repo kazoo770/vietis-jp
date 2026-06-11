@@ -181,8 +181,8 @@ html.js-ready .reveal.d3{transition-delay:0.21s}
   <div className="wrap">
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal">
-        <a href="/">トップ</a><span className="breadcrumb-sep">/</span>
-        <a href="/cases">実績</a><span className="breadcrumb-sep">/</span>
+        <a href="/">トップ</a><span className="breadcrumb-sep">›</span>
+        <a href="/cases">実績</a><span className="breadcrumb-sep">›</span>
         <span aria-current="page">AI採用支援システム「Menraku」導入</span>
       </nav>
     </div>

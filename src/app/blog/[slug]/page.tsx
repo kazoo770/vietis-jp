@@ -260,9 +260,9 @@ html.js-ready .reveal.d3{transition-delay:0.21s}
   <div className="wrap">
     <div className="article-header-inner">
       <nav className="breadcrumb reveal">
-        <a href="/">トップ</a><span className="breadcrumb-sep">/</span>
-        <a href="/blog">ブログ</a><span className="breadcrumb-sep">/</span>
-        <a href="/blog?cat=dev">システム・アプリ開発</a><span className="breadcrumb-sep">/</span>
+        <a href="/">トップ</a><span className="breadcrumb-sep">›</span>
+        <a href="/blog">ブログ</a><span className="breadcrumb-sep">›</span>
+        <a href="/blog?cat=dev">システム・アプリ開発</a><span className="breadcrumb-sep">›</span>
         <span aria-current="page">失敗しない「基幹システム刷新」の進め方</span>
       </nav>
       <div className="article-cat reveal d1">

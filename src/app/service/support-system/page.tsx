@@ -168,7 +168,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><a href="/service">サービス</a><span className="breadcrumb-sep">/</span><span aria-current="page">業務システム・アプリ運用保守</span></nav>
+      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><a href="/service">サービス</a><span className="breadcrumb-sep">›</span><span aria-current="page">業務システム・アプリ運用保守</span></nav>
       <h1 className="page-hero-h1 reveal d1">業務システム・<br />アプリ運用保守</h1>
       <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>本番稼働中の業務システム・アプリを継続的に支援。障害対応・バージョンアップ・機能改善まで同一チームが担当します。</p>
       <div className="page-hero-cta reveal d3">

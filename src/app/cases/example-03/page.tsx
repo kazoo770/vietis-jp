@@ -79,8 +79,8 @@ html.js-ready .reveal.d1{transition-delay:0.07s}html.js-ready .reveal.d2{transit
   <div className="wrap">
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal">
-        <a href="/">トップ</a><span className="breadcrumb-sep">/</span>
-        <a href="/cases">実績</a><span className="breadcrumb-sep">/</span>
+        <a href="/">トップ</a><span className="breadcrumb-sep">›</span>
+        <a href="/cases">実績</a><span className="breadcrumb-sep">›</span>
         <span aria-current="page">社内コア業務システム全面刷新</span>
       </nav>
     </div>

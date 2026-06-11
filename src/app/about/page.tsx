@@ -550,7 +550,7 @@ ul { list-style: none; }
     <div className="page-hero-inner">
       <nav className="breadcrumb" aria-label="パンくずリスト">
         <a href="/">トップ</a>
-        <span className="breadcrumb-sep">/</span>
+        <span className="breadcrumb-sep">›</span>
         <span aria-current="page">企業情報</span>
       </nav>
       <h1 className="page-hero-h1 reveal">企業情報</h1>

@@ -221,7 +221,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><a href="/service">サービス</a><span className="breadcrumb-sep">/</span><span aria-current="page">Webサイト制作</span></nav>
+      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><a href="/service">サービス</a><span className="breadcrumb-sep">›</span><span aria-current="page">Webサイト制作</span></nav>
       <h1 className="page-hero-h1 reveal d1">Webサイト制作</h1>
       <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>LP・コーポレートサイト・大規模サイトまで、目的から逆算した設計で制作。要件定義から運用まで一気通貫で対応します。</p>
       <div className="page-hero-cta reveal d3">

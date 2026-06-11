@@ -298,7 +298,7 @@ html.js-ready .reveal.d3 { transition-delay: 0.21s; }
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal" aria-label="パンくずリスト">
         <a href="/">トップ</a>
-        <span className="breadcrumb-sep">/</span>
+        <span className="breadcrumb-sep">›</span>
         <span aria-current="page">資料ダウンロード</span>
       </nav>
       <h1 className="page-hero-h1 reveal d1">資料ダウンロード</h1>
