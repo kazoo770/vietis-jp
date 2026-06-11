@@ -1260,36 +1260,36 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
 
     <div className="hero-visual reveal d2" aria-hidden="true">
       <div className="accordion-track" id="acc">
-        <div className="accordion-panel active" data-idx="0">
+        <a className="accordion-panel active" data-idx="0" href="/service/ai-driving-suite/">
           <img src="https://picsum.photos/seed/dxsuite77/480/580" alt="" />
           <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/35280159/14945649_1440_2560_25fps.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">AI/DX Driving Suite</span>
-        </div>
-        <div className="accordion-panel" data-idx="1">
+        </a>
+        <a className="accordion-panel" data-idx="1" href="/service/ai-development/">
           <img src="https://picsum.photos/seed/aidev99/480/580" alt="" />
           <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/35163081/14895117_1080_1920_30fps.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">AIシステム開発</span>
-        </div>
-        <div className="accordion-panel" data-idx="2">
+        </a>
+        <a className="accordion-panel" data-idx="2" href="/service/dev-system/">
           <img src="https://picsum.photos/seed/websys55/480/580" alt="" />
           <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/5028622/5028622-hd_1920_1080_25fps.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">Webシステム開発</span>
-        </div>
-        <div className="accordion-panel" data-idx="3">
+        </a>
+        <a className="accordion-panel" data-idx="3" href="/service/dev-app/">
           <img src="https://picsum.photos/seed/appdev33/480/580" alt="" />
           <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/7947490/7947490-hd_1920_1080_30fps.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">アプリ開発</span>
-        </div>
-        <div className="accordion-panel" data-idx="4">
+        </a>
+        <a className="accordion-panel" data-idx="4" href="/service/dev-web/">
           <img src="https://picsum.photos/seed/webdesign11/480/580" alt="" />
           <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/5083548/5083548-hd_1920_1080_25fps.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">Webサイト制作</span>
-        </div>
+        </a>
       </div>
     </div>
 
