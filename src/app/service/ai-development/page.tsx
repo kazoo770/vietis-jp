@@ -852,7 +852,7 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
       <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>生成AI統合・RAG構築・AIエージェント開発まで、要件定義から本番運用まで一社で完結。業務課題を起点に、動くAIを届けます。</p>
       <div className="page-hero-cta reveal d3">
         <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
-        <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+        <a href="/download" className="btn btn-white">資料をダウンロード</a>
       </div>
     </div>
   </div>
