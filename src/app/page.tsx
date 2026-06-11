@@ -118,12 +118,8 @@ ul { list-style: none; }
 }
 .btn:hover .btn-arrow { transform: translate(1px, -1px); }
 
-.btn-dark {
-  background: var(--ink-dark);
-  color: #fff;
-  border-color: var(--ink-dark);
-}
-.btn-dark:hover { background: #000; border-color: #000; }
+
+
 
 .btn-primary {
   background: var(--blue);

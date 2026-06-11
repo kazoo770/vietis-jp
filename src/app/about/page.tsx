@@ -82,7 +82,7 @@ ul { list-style: none; }
 }
 .btn:hover { opacity: 0.82; }
 .btn:active { transform: scale(0.97); }
-.btn-dark  { background: var(--ink); color: #fff; border-color: var(--ink); }
+
 .btn-outline { background: transparent; color: var(--ink); border-color: var(--border); }
 .btn-white { background: #fff; color: var(--ink); border-color: #fff; }
 .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }

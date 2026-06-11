@@ -53,8 +53,8 @@ ul { list-style: none; }
 .btn:active { transform: scale(0.97); }
 .btn-arrow { font-size: 16px; font-family: var(--en); font-weight: 400; line-height: 1; transition: transform 0.2s var(--ease); }
 .btn:hover .btn-arrow { transform: translate(1px, -1px); }
-.btn-dark { background: var(--ink-dark); color: #fff; border-color: var(--ink-dark); }
-.btn-dark:hover { background: #000; border-color: #000; }
+
+
 .btn-outline { background: transparent; color: var(--ink); border-color: var(--border); }
 .btn-outline:hover { border-color: var(--ink); }
 .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
