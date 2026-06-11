@@ -511,11 +511,17 @@ html.js-ready .page-hero .reveal.in {
   line-height: 1.8;
   padding-bottom: 6px;
 }
+.plans-scroll-outer {
+  position: relative;
+}
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   align-items: stretch;
+}
+.plans-swipe-hint {
+  display: none;
 }
 
 /* Plan card */
@@ -662,8 +668,41 @@ html.js-ready .page-hero .reveal.in {
   margin-top: 6px;
 }
 @media (max-width: 1024px) {
-  .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .plans-head { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .plans-scroll-outer::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 56px;
+    background: linear-gradient(to right, transparent, var(--bg-mid));
+    pointer-events: none;
+    z-index: 1;
+  }
+  .plans-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+  .plans-grid::-webkit-scrollbar { display: none; }
+  .plan-card {
+    flex: 0 0 82vw;
+    min-width: 260px;
+    scroll-snap-align: start;
+  }
+  .plans-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--subtle);
+    margin-top: 14px;
+  }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1108,6 +1147,7 @@ html.js-ready .page-hero .reveal.in {
       </p>
     </div>
 
+    <div className="plans-scroll-outer">
     <div className="plans-grid">
 
       
@@ -1240,6 +1280,11 @@ html.js-ready .page-hero .reveal.in {
           <div className="plan-note">大規模DX推進に最適</div>
         </div>
       </div>
+    </div>
+    <p className="plans-swipe-hint" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      スワイプしてプランを比較
+    </p>
     </div>
   </div>
 </section>
