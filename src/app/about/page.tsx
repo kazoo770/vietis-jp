@@ -184,7 +184,7 @@ ul { list-style: none; }
 }
 .breadcrumb a { color: var(--subtle); transition: color 0.15s; }
 .breadcrumb a:hover { color: var(--ink); }
-.breadcrumb-sep { font-size: 10px; opacity: 0.5; }
+
 .page-hero-h1 {
   font-size: clamp(48px, 6vw, 70px);
   font-weight: 700;

@@ -106,7 +106,7 @@ html.js-ready .reveal.d3 { transition-delay: 0.21s; }
 .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--subtle); margin-bottom: clamp(24px, 3vw, 36px); flex-wrap: wrap; }
 .breadcrumb a { color: var(--subtle); transition: color 0.15s; }
 .breadcrumb a:hover { color: var(--ink); }
-.breadcrumb-sep { font-size: 10px; opacity: 0.5; }
+
 .page-hero-h1 { font-size: clamp(48px, 6vw, 70px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.0; color: var(--ink); margin-bottom: 20px; text-wrap: balance; }
 .page-hero-sub { font-size: clamp(15px, 1.5vw, 18px); color: var(--muted); line-height: 1.8; max-width: 62ch; text-wrap: pretty; margin-bottom: 36px; }
 
