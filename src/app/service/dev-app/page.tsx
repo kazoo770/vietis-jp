@@ -273,11 +273,12 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
           <span aria-current="page">アプリ開発</span>
         </nav>
         <h1 className="page-hero-h1 reveal d1">アプリ開発</h1>
-        <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>iOS・Android対応のネイティブ・クロスプラットフォームアプリを、企画・設計から運用まで一気通貫で開発します。</p>
+        <p className="page-hero-sub reveal d2">iOS・Android対応のネイティブ・クロスプラットフォームアプリを、企画・設計から運用まで一気通貫で開発します。</p>
         <div className="page-hero-cta reveal d3">
           <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
           <a href="/download" className="btn btn-outline">資料をダウンロード</a>
-              </div>
+        </div>
+      </div>
       <div className="page-hero-media reveal d2" aria-hidden="true">
         <div className="hero-vid-frame">
           <video autoPlay muted playsInline loop preload="none">
@@ -286,7 +287,6 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
           </video>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
