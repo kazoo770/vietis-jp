@@ -105,12 +105,31 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 .mobile-nav-actions .btn { width: 100%; justify-content: center; }
 
 /* ═══ PAGE HERO ════════════════════════════════ */
-.page-hero { padding-top: 72px; border-bottom: 1px solid var(--border); }
-.page-hero-inner { padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px); display: grid; grid-template-columns: 55fr 45fr; gap: clamp(40px, 5vw, 80px); align-items: center; }
-
-
+.page-hero { padding-top: 72px; border-bottom: 1px solid var(--border); overflow: hidden; }
+.page-hero-inner {
+  padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px);
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
 
 .breadcrumb-sep { color: var(--border); }
+
+/* Hero video — right column */
+.hero-vid-frame {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(15,17,23,0.13);
+  transform: perspective(1000px) rotateY(-7deg);
+  transition: transform 0.7s cubic-bezier(0.23,1,0.32,1);
+  will-change: transform;
+}
+.hero-vid-frame:hover { transform: perspective(1000px) rotateY(-2deg); }
+.hero-vid-frame video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-vid-frame { transform: none; transition: none; }
+}
 .page-hero-h1 { font-size: clamp(48px, 6vw, 70px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.0; color: var(--ink); margin-bottom: 20px; }
 .page-hero-sub { font-size: clamp(15px, 1.5vw, 18px); color: var(--muted); line-height: 1.8; max-width: 50ch; text-wrap: pretty; margin-bottom: 36px; }
 .page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -226,7 +245,8 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 @media (max-width: 768px) {
   .header-nav, .header-lang, .header-actions { display: none; }
   .hamburger { display: flex; }
-  .header-inner { grid-template-columns: auto 1fr; }  .page-hero-inner { grid-template-columns: 1fr; }
+  .header-inner { grid-template-columns: auto 1fr; }
+  .page-hero-inner { grid-template-columns: 1fr; }
   .page-hero-media { display: none; }
 
   .pitch-grid { grid-template-columns: 1fr; }
