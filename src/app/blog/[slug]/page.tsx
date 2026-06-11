@@ -100,9 +100,9 @@ html.js-ready .reveal.d3{transition-delay:0.21s}
 .article-header{padding-top:72px}
 .article-header .wrap{max-width:1080px}
 .article-header-inner{padding:clamp(32px,4vw,56px) 0 clamp(24px,3vw,36px)}
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--subtle);margin-bottom:24px;flex-wrap:wrap}
-.breadcrumb a{color:var(--subtle);transition:color 0.15s}
-.breadcrumb a:hover{color:var(--ink)}
+
+
+
 
 .article-cat{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .article-cat-tag{font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--blue);background:var(--blue-pale);padding:4px 10px;border-radius:2px}

@@ -299,17 +299,9 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 ═══════════════════════════════════════════════ */
 .page-hero { padding-top: 72px; border-bottom: 1px solid var(--border); }
 .page-hero-inner { padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px); }
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--subtle);
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-.breadcrumb a { color: var(--subtle); transition: color 0.15s; }
-.breadcrumb a:hover { color: var(--ink); }
+
+
+
 .breadcrumb-sep { color: var(--border); }
 .page-hero-h1 {
   font-size: clamp(48px, 6vw, 70px);

@@ -75,9 +75,9 @@ html.js-ready .reveal.d3{transition-delay:0.21s}
 /* PAGE HERO */
 .page-hero{padding-top:72px;background:var(--bg)}
 .page-hero-inner{padding:clamp(40px,5vw,64px) 0 clamp(32px,4vw,48px)}
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--subtle);margin-bottom:24px;flex-wrap:wrap}
-.breadcrumb a{color:var(--subtle);transition:color 0.15s}
-.breadcrumb a:hover{color:var(--ink)}
+
+
+
 
 .case-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
 .tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:2px;letter-spacing:0.03em;white-space:nowrap}

@@ -246,16 +246,9 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 .page-hero-inner {
   padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px);
 }
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: var(--subtle);
-  margin-bottom: clamp(24px, 3vw, 36px);
-}
-.breadcrumb a { color: var(--subtle); transition: color 0.15s; }
-.breadcrumb a:hover { color: var(--ink); }
+
+
+
 
 .page-hero-h1 {
   font-size: clamp(48px, 6vw, 70px);
