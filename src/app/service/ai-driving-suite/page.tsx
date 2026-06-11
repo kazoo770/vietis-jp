@@ -1017,7 +1017,7 @@ html.js-ready .page-hero .reveal.in {
       <div className="hero-stat-row">
         <div className="hero-stat-box">
           <div className="hero-stat-n">350<span>件+</span></div>
-          <div className="hero-stat-label">累計プロジェクト<br />実績</div>
+          <div className="hero-stat-label">累計プロジェクト実績</div>
         </div>
         <div className="hero-stat-box">
           <div className="hero-stat-n">300<span>名+</span></div>
