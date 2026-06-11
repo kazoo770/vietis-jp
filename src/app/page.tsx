@@ -1279,7 +1279,7 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
           <span className="acc-label">Webシステム開発</span>
         </a>
         <a className="accordion-panel" data-idx="3" href="/service/dev-app/">
-          <img src="https://picsum.photos/seed/appdev33/480/580" alt="" />
+          <img src="/images/app-panel.webp" alt="" />
           <video muted playsInline loop preload="none"><source src="/videos/app.webm" type="video/webm" /><source src="/videos/app.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">アプリ開発</span>
