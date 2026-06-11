@@ -7,8 +7,14 @@ export default function TopPageInit() {
     const panels = Array.from(document.querySelectorAll<HTMLElement>('.accordion-panel'));
     if (panels.length) {
       const activatePanel = (p: HTMLElement) => {
-        panels.forEach((x) => x.classList.remove('active'));
+        panels.forEach((x) => {
+          x.classList.remove('active');
+          const v = x.querySelector<HTMLVideoElement>('video');
+          if (v) { v.pause(); v.currentTime = 0; }
+        });
         p.classList.add('active');
+        const v = p.querySelector<HTMLVideoElement>('video');
+        if (v) v.play().catch(() => {});
       };
       panels.forEach((p) => {
         p.addEventListener('mouseenter', () => activatePanel(p));
