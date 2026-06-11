@@ -9,42 +9,39 @@ export default function RevealInit() {
   useEffect(() => {
     document.documentElement.classList.replace('no-js', 'js-ready');
 
-    // ページ遷移のたびに .in を一度リセットしてから再登録
+    // Batch-remove .in so previous-page state doesn't linger
     const reveals = document.querySelectorAll<HTMLElement>('.will-animate, .reveal');
-    const vh = window.innerHeight;
+    reveals.forEach(el => el.classList.remove('in'));
 
-    reveals.forEach(el => {
-      // 既に .in が付いていたら一旦外す（前ページの残留を防ぐ）
-      el.classList.remove('in');
+    let io: IntersectionObserver | null = null;
+
+    // rAF waits for new DOM to paint before observing — no setTimeout needed
+    const raf = requestAnimationFrame(() => {
+      const freshReveals = document.querySelectorAll<HTMLElement>('.will-animate, .reveal');
+
+      // rootMargin '10% 0px' extends the detection area upward so elements
+      // already in the viewport on page load are caught on the first callback,
+      // eliminating the need for a synchronous getBoundingClientRect() loop.
+      io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              (e.target as HTMLElement).classList.add('in');
+              io!.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '10% 0px -24px 0px' },
+      );
+
+      freshReveals.forEach(el => io!.observe(el));
     });
 
-    // 少し待ってから登録（新しいDOMが確定するのを待つ）
-    const timer = setTimeout(() => {
-      const freshReveals = document.querySelectorAll<HTMLElement>('.will-animate, .reveal');
-      freshReveals.forEach(el => {
-        if (el.getBoundingClientRect().top < vh * 1.1) {
-          el.classList.add('in');
-        }
-      });
-
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px -24px 0px' });
-
-      freshReveals.forEach(el => {
-        if (!el.classList.contains('in')) io.observe(el);
-      });
-
-      return () => io.disconnect();
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, [pathname]); // pathname が変わるたびに再実行
+    return () => {
+      cancelAnimationFrame(raf);
+      io?.disconnect();
+    };
+  }, [pathname]);
 
   return null;
 }
