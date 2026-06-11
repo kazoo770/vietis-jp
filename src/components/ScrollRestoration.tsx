@@ -27,10 +27,10 @@ export default function ScrollRestoration() {
     const saved = positions.get(pathname);
     if (saved !== undefined) {
       // 戻る/進む: 保存位置へ復元
-      requestAnimationFrame(() => window.scrollTo(0, saved));
+      requestAnimationFrame(() => window.scrollTo({ top: saved, behavior: 'instant' }));
     } else {
       // 新規遷移: トップへ
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
     prevPathname.current = pathname;
