@@ -293,10 +293,14 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 /* ═══════════════════════════════════════════════
    PAGE HERO
 ═══════════════════════════════════════════════ */
-.page-hero { padding-top: 72px; border-bottom: 1px solid var(--border); }
-.page-hero-inner { padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px); }
-
-
+.page-hero { padding-top: 72px; border-bottom: 1px solid var(--border); overflow: hidden; }
+.page-hero-inner {
+  padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px);
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
 
 .breadcrumb-sep { color: var(--border); }
 .page-hero-h1 {
@@ -316,6 +320,21 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   margin-bottom: 36px;
 }
 .page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Hero video — right column */
+.hero-vid-frame {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(15,17,23,0.13);
+  transform: perspective(1000px) rotateY(-7deg);
+  transition: transform 0.7s cubic-bezier(0.23,1,0.32,1);
+  will-change: transform;
+}
+.hero-vid-frame:hover { transform: perspective(1000px) rotateY(-2deg); }
+.hero-vid-frame video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-vid-frame { transform: none; transition: none; }
+}
 
 /* ═══════════════════════════════════════════════
    PITCH SECTION
@@ -790,6 +809,8 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   .hamburger { display: flex; }
   .header-inner { grid-template-columns: auto 1fr; }
 
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .page-hero-media { display: none; }
   .pitch-grid { grid-template-columns: 1fr; }
   .svc-menu-grid { grid-template-columns: 1fr; }
   .flow-steps { grid-template-columns: 1fr; }
@@ -809,18 +830,28 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal" aria-label="パンくずリスト">
-        <a href="/">トップ</a>
-        <span className="breadcrumb-sep">/</span>
-        <a href="/service">サービス</a>
-        <span className="breadcrumb-sep">/</span>
-        <span aria-current="page">Webシステム・業務システム開発</span>
-      </nav>
-      <h1 className="page-hero-h1 reveal d1">Webシステム・<br />業務システム開発</h1>
-      <p className="page-hero-sub reveal d2">業務フローを深く理解してから設計・開発。要件定義から運用保守まで、同一チームが一気通貫で支援します。</p>
-      <div className="page-hero-cta reveal d3">
-        <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
-        <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+      <div className="page-hero-content">
+        <nav className="breadcrumb reveal" aria-label="パンくずリスト">
+          <a href="/">トップ</a>
+          <span className="breadcrumb-sep">/</span>
+          <a href="/service">サービス</a>
+          <span className="breadcrumb-sep">/</span>
+          <span aria-current="page">Webシステム・業務システム開発</span>
+        </nav>
+        <h1 className="page-hero-h1 reveal d1">Webシステム・<br />業務システム開発</h1>
+        <p className="page-hero-sub reveal d2">業務フローを深く理解してから設計・開発。要件定義から運用保守まで、同一チームが一気通貫で支援します。</p>
+        <div className="page-hero-cta reveal d3">
+          <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
+          <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+        </div>
+      </div>
+      <div className="page-hero-media reveal d2" aria-hidden="true">
+        <div className="hero-vid-frame">
+          <video autoPlay muted playsInline loop preload="none">
+            <source src="/videos/system_dev.webm" type="video/webm" />
+            <source src="/videos/system_dev.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   </div>
