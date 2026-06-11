@@ -813,9 +813,9 @@ details[open] .faq-q-arrow { transform: rotate(180deg); }
     <div className="page-hero-inner">
       <nav className="breadcrumb" aria-label="パンくずリスト">
         <a href="/">トップ</a>
-        <span className="breadcrumb-sep">›</span>
+        <span className="breadcrumb-sep">/</span>
         <a href="/product">プロダクト</a>
-        <span className="breadcrumb-sep">›</span>
+        <span className="breadcrumb-sep">/</span>
         <span aria-current="page">Keyspider導入サポート</span>
       </nav>
       <h1 className="page-hero-h1 reveal">Keyspider<br />導入サポート</h1>

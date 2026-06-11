@@ -155,7 +155,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><span aria-current="page">ブログ</span></nav>
+      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><span aria-current="page">ブログ</span></nav>
       <h1 className="page-hero-h1 reveal d1">ブログ</h1>
       <p className="page-hero-sub reveal d2">システム開発、アプリ開発、最新のAI活用からDX推進の実践ノウハウまで。<br />ビジネスの変革を加速させる技術情報をお届けします。</p>
     </div>

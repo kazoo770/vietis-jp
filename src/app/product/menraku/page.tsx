@@ -828,9 +828,9 @@ details[open] .faq-q-arrow { transform: rotate(180deg); }
         <div>
           <nav className="breadcrumb" aria-label="パンくずリスト">
             <a href="/">トップ</a>
-            <span className="breadcrumb-sep">›</span>
+            <span className="breadcrumb-sep">/</span>
             <a href="/product">プロダクト</a>
-            <span className="breadcrumb-sep">›</span>
+            <span className="breadcrumb-sep">/</span>
             <span aria-current="page">Menraku</span>
           </nav>
           <div className="demo-badge reveal">

@@ -76,7 +76,7 @@ html.js-ready .reveal.d1{transition-delay:0.07s}html.js-ready .reveal.d2{transit
 
       `}</style>
 <div className="page-hero"><div className="wrap"><div className="page-hero-inner">
-  <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><a href="/cases">実績</a><span className="breadcrumb-sep">›</span><span aria-current="page">自治体向けAI総合案内チャットボット</span></nav>
+  <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><a href="/cases">実績</a><span className="breadcrumb-sep">/</span><span aria-current="page">自治体向けAI総合案内チャットボット</span></nav>
 </div></div></div>
 <section className="case-layout"><div className="wrap">
   <div className="case-body">
