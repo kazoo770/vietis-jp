@@ -1261,7 +1261,7 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
     <div className="hero-visual reveal d2" aria-hidden="true">
       <div className="accordion-track" id="acc">
         <a className="accordion-panel active" data-idx="0" href="/service/ai-driving-suite/">
-          <img src="https://picsum.photos/seed/dxsuite77/480/580" alt="" />
+          <img src="/images/ai-driving-suite-panel.webp" alt="" />
           <video muted playsInline loop preload="none"><source src="/videos/ai_driving_suite.webm" type="video/webm" /><source src="/videos/ai_driving_suite.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">AI/DX Driving Suite</span>
