@@ -1262,7 +1262,7 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
       <div className="accordion-track" id="acc">
         <a className="accordion-panel active" data-idx="0" href="/service/ai-driving-suite/">
           <img src="https://picsum.photos/seed/dxsuite77/480/580" alt="" />
-          <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/35280159/14945649_1440_2560_25fps.mp4" type="video/mp4" /></video>
+          <video muted playsInline loop preload="none"><source src="/videos/ai_driving_suite.webm" type="video/webm" /><source src="/videos/ai_driving_suite.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">AI/DX Driving Suite</span>
         </a>
