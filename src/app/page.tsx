@@ -1268,7 +1268,7 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
         </a>
         <a className="accordion-panel" data-idx="1" href="/service/ai-development/">
           <img src="https://picsum.photos/seed/aidev99/480/580" alt="" />
-          <video muted playsInline loop preload="none"><source src="https://videos.pexels.com/video-files/35163081/14895117_1080_1920_30fps.mp4" type="video/mp4" /></video>
+          <video muted playsInline loop preload="none"><source src="/videos/ai_development.webm" type="video/webm" /><source src="/videos/ai_development.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">AIシステム開発</span>
         </a>
