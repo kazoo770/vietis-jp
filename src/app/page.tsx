@@ -1267,7 +1267,7 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
           <span className="acc-label">AI/DX Driving Suite</span>
         </a>
         <a className="accordion-panel" data-idx="1" href="/service/ai-development/">
-          <img src="https://picsum.photos/seed/aidev99/480/580" alt="" />
+          <img src="/images/ai-development-panel.webp" alt="" />
           <video muted playsInline loop preload="none"><source src="/videos/ai_development.webm" type="video/webm" /><source src="/videos/ai_development.mp4" type="video/mp4" /></video>
           <div className="accordion-overlay"></div>
           <span className="acc-label">AIシステム開発</span>
