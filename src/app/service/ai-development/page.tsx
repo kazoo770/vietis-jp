@@ -307,7 +307,7 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0.08;
+  opacity: 0.35;
   pointer-events: none;
 }
 .page-hero-inner {
