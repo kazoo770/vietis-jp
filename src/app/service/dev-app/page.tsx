@@ -245,8 +245,8 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   <div className="wrap">
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal" aria-label="パンくずリスト">
-        <a href="/">トップ</a><span className="breadcrumb-sep">›</span>
-        <a href="/service">サービス</a><span className="breadcrumb-sep">›</span>
+        <a href="/">トップ</a><span className="breadcrumb-sep">/</span>
+        <a href="/service">サービス</a><span className="breadcrumb-sep">/</span>
         <span aria-current="page">アプリ開発</span>
       </nav>
       <h1 className="page-hero-h1 reveal d1">アプリ開発</h1>

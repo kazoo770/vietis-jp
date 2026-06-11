@@ -182,7 +182,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><span aria-current="page">採用</span></nav>
+      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><span aria-current="page">採用</span></nav>
       <h1 className="page-hero-h1 reveal d1">採用</h1>
       <p className="page-hero-sub reveal d2">伴走型AI/DXエージェンシーとして、戦略立案から実装・運用まで一貫して支援しています。技術と事業の両方を理解しながら、クライアントと並走できる人材を求めています。スキルや経験の幅より、自分で考えて動ける意志を大切にしています。</p>
     </div>

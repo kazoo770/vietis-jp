@@ -135,7 +135,7 @@ html.js-ready .reveal.d2{transition-delay:0.14s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">›</span><span aria-current="page">プライバシーポリシー</span></nav>
+      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><span aria-current="page">プライバシーポリシー</span></nav>
       <h1 className="page-hero-h1 reveal d1">プライバシーポリシー</h1>
       <p className="page-hero-sub reveal d2">株式会社VIETISジャパンにおける個人情報の取り扱いについて定めます。</p>
     </div>
