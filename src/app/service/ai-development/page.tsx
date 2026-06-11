@@ -298,7 +298,7 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 ═══════════════════════════════════════════════ */
 .page-hero {
   padding-top: 72px;
-  background: var(--ink-dark);
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
   position: relative;
 }
@@ -307,7 +307,7 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0.22;
+  opacity: 0.08;
   pointer-events: none;
 }
 .page-hero-inner {
@@ -319,22 +319,18 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.0;
-  color: #fff;
+  color: var(--ink);
   margin-bottom: 20px;
 }
 .page-hero-sub {
   font-size: clamp(15px, 1.5vw, 18px);
-  color: rgba(255,255,255,0.7);
+  color: var(--muted);
   line-height: 1.8;
   max-width: 50ch;
   text-wrap: pretty;
   margin-bottom: 36px;
 }
 .page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.page-hero .breadcrumb, .page-hero .breadcrumb a, .page-hero .breadcrumb [aria-current="page"] { color: rgba(255,255,255,0.4); }
-.page-hero .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
-.page-hero .breadcrumb a:first-child { background-color: rgba(255,255,255,0.4); }
-.page-hero .breadcrumb a:first-child:hover { background-color: rgba(255,255,255,0.8); }
 
 /* ═══════════════════════════════════════════════
    PITCH — 課題 + 解決
