@@ -322,7 +322,7 @@ html.js-ready .page-hero .reveal.in {
 }
 .page-hero-sub {
   font-size: clamp(15px, 1.4vw, 17px);
-  color: rgba(255,255,255,0.9);
+  color: #fff;
   line-height: 1.85;
   max-width: 46ch;
   text-wrap: pretty;
