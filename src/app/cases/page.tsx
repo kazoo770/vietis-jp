@@ -80,7 +80,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--subtle);margin-bottom:24px;flex-wrap:wrap}
 .breadcrumb a{color:var(--subtle);transition:color 0.15s}
 .breadcrumb a:hover{color:var(--ink)}
-.breadcrumb-sep{color:var(--border)}
+
 .page-hero-h1{font-size:clamp(48px,6vw,70px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--ink);margin-bottom:20px;text-wrap:balance}
 .page-hero-sub{font-size:clamp(15px,1.5vw,18px);color:var(--muted);line-height:1.8;max-width:52ch;margin-bottom:32px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}

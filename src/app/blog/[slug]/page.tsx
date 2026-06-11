@@ -103,7 +103,7 @@ html.js-ready .reveal.d3{transition-delay:0.21s}
 .breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--subtle);margin-bottom:24px;flex-wrap:wrap}
 .breadcrumb a{color:var(--subtle);transition:color 0.15s}
 .breadcrumb a:hover{color:var(--ink)}
-.breadcrumb-sep{color:var(--border)}
+
 .article-cat{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .article-cat-tag{font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--blue);background:var(--blue-pale);padding:4px 10px;border-radius:2px}
 .article-tag{font-size:11px;font-weight:700;color:var(--subtle);background:var(--bg-off);padding:3px 8px;border-radius:2px}

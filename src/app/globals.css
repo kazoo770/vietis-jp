@@ -155,7 +155,7 @@ html.js-ready .reveal.d3 { transition-delay: 0.21s; }
 .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--subtle); margin-bottom: clamp(24px, 3vw, 36px); flex-wrap: wrap; }
 .breadcrumb a { color: var(--subtle); transition: color 180ms cubic-bezier(0.23, 1, 0.32, 1); }
 .breadcrumb a:hover { color: var(--ink); }
-.breadcrumb-sep { color: var(--subtle); font-size: 11px; }
+.breadcrumb-sep { color: var(--subtle); font-size: 14px; }
 .breadcrumb [aria-current="page"] { color: var(--subtle); }
 .breadcrumb a:first-child { font-size: 0; display: inline-flex; align-items: center; width: 13px; height: 13px; background-color: var(--subtle); transition: background-color 180ms cubic-bezier(0.23, 1, 0.32, 1); -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1L0 8h2v7h4v-4h4v4h4V8h2z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1L0 8h2v7h4v-4h4v4h4V8h2z'/%3E%3C/svg%3E"); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; }
 .breadcrumb a:first-child:hover { background-color: var(--ink); }
