@@ -250,6 +250,14 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
   overflow: hidden;
   position: relative;
 }
+.page-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  pointer-events: none;
+}
 .page-hero::before {
   content: '';
   position: absolute;
@@ -979,6 +987,10 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
 
       `}</style>
 <section className="page-hero" aria-label="AI/DX Driving Suite">
+  <video className="page-hero-video" autoPlay muted playsInline loop preload="none" aria-hidden="true">
+    <source src="/videos/ai_driving_suite.webm" type="video/webm" />
+    <source src="/videos/ai_driving_suite.mp4" type="video/mp4" />
+  </video>
   <div className="page-hero-inner wrap">
     <div className="page-hero-left">
       <nav className="page-hero-breadcrumb" aria-label="パンくずリスト">
