@@ -78,7 +78,7 @@ ul { list-style: none; }
   transition: clip-path 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: -1;
 }
-.btn-dark:hover { background: var(--ink-dark); border-color: var(--blue); }
+.btn-dark:hover { background: var(--blue); border-color: var(--blue); }
 .btn-dark:hover::before { clip-path: inset(0 0% 0 0); }
 @media (prefers-reduced-motion: reduce) {
   .btn-dark::before { display: none; }
