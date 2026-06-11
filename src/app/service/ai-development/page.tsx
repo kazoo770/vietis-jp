@@ -298,32 +298,43 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 ═══════════════════════════════════════════════ */
 .page-hero {
   padding-top: 72px;
-  border-bottom: 1px solid var(--border);
+  background: var(--ink-dark);
+  overflow: hidden;
+  position: relative;
+}
+.page-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  pointer-events: none;
 }
 .page-hero-inner {
   padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px);
+  position: relative;
 }
-
-
-
-
 .page-hero-h1 {
   font-size: clamp(48px, 6vw, 70px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.0;
-  color: var(--ink);
+  color: #fff;
   margin-bottom: 20px;
 }
 .page-hero-sub {
   font-size: clamp(15px, 1.5vw, 18px);
-  color: var(--muted);
+  color: rgba(255,255,255,0.7);
   line-height: 1.8;
   max-width: 50ch;
   text-wrap: pretty;
   margin-bottom: 36px;
 }
 .page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.page-hero .breadcrumb, .page-hero .breadcrumb a, .page-hero .breadcrumb [aria-current="page"] { color: rgba(255,255,255,0.4); }
+.page-hero .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+.page-hero .breadcrumb a:first-child { background-color: rgba(255,255,255,0.4); }
+.page-hero .breadcrumb a:first-child:hover { background-color: rgba(255,255,255,0.8); }
 
 /* ═══════════════════════════════════════════════
    PITCH — 課題 + 解決
@@ -828,6 +839,10 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 
       `}</style>
 <div className="page-hero">
+  <video className="page-hero-video" autoPlay muted playsInline loop preload="none" aria-hidden="true">
+    <source src="/videos/ai_development.webm" type="video/webm" />
+    <source src="/videos/ai_development.mp4" type="video/mp4" />
+  </video>
   <div className="wrap">
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal" aria-label="パンくずリスト">
