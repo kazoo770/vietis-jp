@@ -262,6 +262,7 @@ html.js-ready .page-hero .reveal.in {
   object-fit: cover;
   opacity: 0.22;
   pointer-events: none;
+  z-index: 0;
 }
 .page-hero::before {
   content: '';
@@ -272,6 +273,8 @@ html.js-ready .page-hero .reveal.in {
   pointer-events: none;
 }
 .page-hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(56px, 8vw, 100px) var(--gutter) clamp(64px, 10vw, 120px);
