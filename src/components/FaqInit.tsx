@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 
-// アコーディオンの設定パターン
 const PATTERNS = [
   // パターン1: .faq-q / .faq-a / .faq-a-inner (ai-driving-suite 等)
   {
@@ -29,16 +28,25 @@ const PATTERNS = [
   },
 ];
 
+type BoundItem = {
+  item: HTMLElement;
+  trigger: HTMLElement;
+  body: HTMLElement;
+  inner: HTMLElement | null;
+};
+
 function initAccordion(pattern: typeof PATTERNS[number]) {
   // <details> ネイティブアコーディオンは除外（menraku 等）
   const items = Array.from(document.querySelectorAll<HTMLElement>(pattern.item))
     .filter(el => el.tagName.toLowerCase() !== 'details');
   if (!items.length) return;
 
-  // 同じパターンの item が既にバインド済みか確認（重複防止）
   const attr = `data-acc-${pattern.trigger.replace(/[^a-z]/g, '')}`;
   const freshItems = items.filter(el => !el.hasAttribute(attr));
   if (!freshItems.length) return;
+
+  // DOM参照をバインド時にキャッシュ — クリックハンドラ内での querySelector を排除
+  const bound: BoundItem[] = [];
 
   freshItems.forEach(item => {
     item.setAttribute(attr, '1');
@@ -46,32 +54,37 @@ function initAccordion(pattern: typeof PATTERNS[number]) {
     const body = item.querySelector<HTMLElement>(pattern.body);
     if (!trigger || !body) return;
 
-    // maxHeight 使用パターンの初期化
-    if (pattern.useMaxHeight) {
-      const inner = pattern.inner ? item.querySelector<HTMLElement>(pattern.inner) : null;
-      if (item.classList.contains('open') && inner) {
-        body.style.maxHeight = inner.scrollHeight + 'px';
-      }
+    const inner = pattern.inner ? item.querySelector<HTMLElement>(pattern.inner) : null;
+
+    // 初期状態が open のアイテムの maxHeight を設定
+    if (pattern.useMaxHeight && item.classList.contains('open') && inner) {
+      body.style.maxHeight = inner.scrollHeight + 'px';
     }
 
+    bound.push({ item, trigger, body, inner });
+  });
+
+  bound.forEach(({ item, trigger, body, inner }) => {
     const toggle = () => {
       const isOpen = item.classList.contains('open');
 
-      // 同グループを全部閉じる
-      freshItems.forEach(other => {
-        other.classList.remove('open');
-        const otherTrigger = other.querySelector<HTMLElement>(pattern.trigger);
-        const otherBody = other.querySelector<HTMLElement>(pattern.body);
-        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-        if (otherBody && pattern.useMaxHeight) otherBody.style.maxHeight = '0';
+      // READ フェーズ: 書き込みより前に scrollHeight を読む（forced reflow 防止）
+      const targetHeight = !isOpen && pattern.useMaxHeight && inner
+        ? inner.scrollHeight
+        : 0;
+
+      // WRITE フェーズ: 読み取り完了後にまとめて DOM を変更
+      bound.forEach(b => {
+        b.item.classList.remove('open');
+        b.trigger.setAttribute('aria-expanded', 'false');
+        if (pattern.useMaxHeight) b.body.style.maxHeight = '0';
       });
 
       if (!isOpen) {
         item.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');
-        if (pattern.useMaxHeight) {
-          const inner = pattern.inner ? item.querySelector<HTMLElement>(pattern.inner) : null;
-          if (inner) body.style.maxHeight = inner.scrollHeight + 'px';
+        if (pattern.useMaxHeight && inner) {
+          body.style.maxHeight = targetHeight + 'px';
         }
       }
     };
