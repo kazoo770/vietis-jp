@@ -237,6 +237,15 @@ html.js-ready .will-animate.d4 { transition-delay: 0.28s; }
 .mobile-nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
 .mobile-nav-actions .btn { justify-content: center; }
 
+/* ヒーロー内の reveal は常に表示（ビューポート内なのでアニメーション不要） */
+.page-hero .reveal,
+html.js-ready .page-hero .reveal,
+html.js-ready .page-hero .reveal.in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ═══════════════════════════════════════════════
    PAGE HERO (dark)
 ═══════════════════════════════════════════════ */
