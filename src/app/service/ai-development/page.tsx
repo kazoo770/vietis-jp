@@ -331,6 +331,7 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
   margin-bottom: 36px;
 }
 .page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.page-hero-cta .btn-white:hover { background: #fff; border-color: var(--ink-dark); }
 
 /* ═══════════════════════════════════════════════
    PITCH — 課題 + 解決
