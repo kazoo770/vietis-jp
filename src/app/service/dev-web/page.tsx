@@ -83,7 +83,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
 /* PAGE HERO */
 .page-hero{padding-top:72px;border-bottom:1px solid var(--border)}
-.page-hero-inner{padding:clamp(56px,8vw,100px) 0 clamp(48px,7vw,80px)}
+.page-hero-inner { padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px); display: grid; grid-template-columns: 55fr 45fr; gap: clamp(40px, 5vw, 80px); align-items: center; }
 
 
 
@@ -221,13 +221,23 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><a href="/service">サービス</a><span className="breadcrumb-sep">/</span><span aria-current="page">Webサイト制作</span></nav>
-      <h1 className="page-hero-h1 reveal d1">Webサイト制作</h1>
-      <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>LP・コーポレートサイト・大規模サイトまで、目的から逆算した設計で制作。要件定義から運用まで一気通貫で対応します。</p>
-      <div className="page-hero-cta reveal d3">
-        <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
-        <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+      <div className="page-hero-content">
+        <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><a href="/service">サービス</a><span className="breadcrumb-sep">/</span><span aria-current="page">Webサイト制作</span></nav>
+        <h1 className="page-hero-h1 reveal d1">Webサイト制作</h1>
+        <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>LP・コーポレートサイト・大規模サイトまで、目的から逆算した設計で制作。要件定義から運用まで一気通貫で対応します。</p>
+        <div className="page-hero-cta reveal d3">
+          <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
+          <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+              </div>
+      <div className="page-hero-media reveal d2" aria-hidden="true">
+        <div className="hero-vid-frame">
+          <video autoPlay muted playsInline loop preload="none">
+            <source src="/videos/web_design.webm" type="video/webm" />
+            <source src="/videos/web_design.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
+    </div>
     </div>
   </div>
 </div>

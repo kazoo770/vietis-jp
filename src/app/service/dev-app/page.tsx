@@ -106,7 +106,7 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 
 /* ═══ PAGE HERO ════════════════════════════════ */
 .page-hero { padding-top: 72px; border-bottom: 1px solid var(--border); }
-.page-hero-inner { padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px); }
+.page-hero-inner { padding: clamp(56px, 8vw, 100px) 0 clamp(48px, 7vw, 80px); display: grid; grid-template-columns: 55fr 45fr; gap: clamp(40px, 5vw, 80px); align-items: center; }
 
 
 
@@ -226,7 +226,9 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 @media (max-width: 768px) {
   .header-nav, .header-lang, .header-actions { display: none; }
   .hamburger { display: flex; }
-  .header-inner { grid-template-columns: auto 1fr; }
+  .header-inner { grid-template-columns: auto 1fr; }  .page-hero-inner { grid-template-columns: 1fr; }
+  .page-hero-media { display: none; }
+
   .pitch-grid { grid-template-columns: 1fr; }
   .svc-menu-grid { grid-template-columns: 1fr; }
   .flow-steps { grid-template-columns: 1fr; }
@@ -244,17 +246,27 @@ html.js-ready .reveal.d4 { transition-delay: 0.28s; }
 <div className="page-hero">
   <div className="wrap">
     <div className="page-hero-inner">
-      <nav className="breadcrumb reveal" aria-label="パンくずリスト">
-        <a href="/">トップ</a><span className="breadcrumb-sep">/</span>
-        <a href="/service">サービス</a><span className="breadcrumb-sep">/</span>
-        <span aria-current="page">アプリ開発</span>
-      </nav>
-      <h1 className="page-hero-h1 reveal d1">アプリ開発</h1>
-      <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>iOS・Android対応のネイティブ・クロスプラットフォームアプリを、企画・設計から運用まで一気通貫で開発します。</p>
-      <div className="page-hero-cta reveal d3">
-        <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
-        <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+      <div className="page-hero-content">
+        <nav className="breadcrumb reveal" aria-label="パンくずリスト">
+          <a href="/">トップ</a><span className="breadcrumb-sep">/</span>
+          <a href="/service">サービス</a><span className="breadcrumb-sep">/</span>
+          <span aria-current="page">アプリ開発</span>
+        </nav>
+        <h1 className="page-hero-h1 reveal d1">アプリ開発</h1>
+        <p className="page-hero-sub reveal d2" style={{maxWidth: '680px'}}>iOS・Android対応のネイティブ・クロスプラットフォームアプリを、企画・設計から運用まで一気通貫で開発します。</p>
+        <div className="page-hero-cta reveal d3">
+          <a href="/consultation" className="btn btn-dark">無料相談を予約する <span className="btn-arrow">↗</span></a>
+          <a href="/download" className="btn btn-outline">資料をダウンロード</a>
+              </div>
+      <div className="page-hero-media reveal d2" aria-hidden="true">
+        <div className="hero-vid-frame">
+          <video autoPlay muted playsInline loop preload="none">
+            <source src="/videos/app.webm" type="video/webm" />
+            <source src="/videos/app.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
+    </div>
     </div>
   </div>
 </div>
