@@ -206,25 +206,30 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 <div className="page-hero">
   <div className="hero-photos" aria-hidden="true">
     <div className="photo-grid">
+      {/* Col 0: 1,6,11 — down */}
       <div className="photo-col"><div className="photo-strip photo-strip--down">
-        <img src="https://picsum.photos/seed/rec-a1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a4/176/235" alt="" loading="eager" />
-        <img src="https://picsum.photos/seed/rec-a1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a4/176/235" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_1.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_6.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_11.jpg" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_1.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_6.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_11.jpg" alt="" loading="eager" />
       </div></div>
+      {/* Col 1: 2,7,12 — up */}
       <div className="photo-col"><div className="photo-strip photo-strip--up">
-        <img src="https://picsum.photos/seed/rec-b1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b4/176/235" alt="" loading="eager" />
-        <img src="https://picsum.photos/seed/rec-b1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b4/176/235" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_2.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_7.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_12.jpg" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_2.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_7.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_12.jpg" alt="" loading="eager" />
       </div></div>
+      {/* Col 2: 3,8,13 — down */}
       <div className="photo-col"><div className="photo-strip photo-strip--down">
-        <img src="https://picsum.photos/seed/rec-c1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c4/176/235" alt="" loading="eager" />
-        <img src="https://picsum.photos/seed/rec-c1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c4/176/235" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_3.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_8.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_13.jpg" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_3.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_8.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_13.jpg" alt="" loading="eager" />
       </div></div>
+      {/* Col 3: 4,9,14 — up */}
       <div className="photo-col"><div className="photo-strip photo-strip--up">
-        <img src="https://picsum.photos/seed/rec-d1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d4/176/235" alt="" loading="eager" />
-        <img src="https://picsum.photos/seed/rec-d1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d4/176/235" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_4.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_9.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_14.jpg" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_4.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_9.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_14.jpg" alt="" loading="eager" />
       </div></div>
+      {/* Col 4: 5,10,15 — down */}
       <div className="photo-col"><div className="photo-strip photo-strip--down">
-        <img src="https://picsum.photos/seed/rec-e1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e4/176/235" alt="" loading="eager" />
-        <img src="https://picsum.photos/seed/rec-e1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e4/176/235" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_5.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_10.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_15.jpg" alt="" loading="eager" />
+        <img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_5.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_10.jpg" alt="" loading="eager" /><img src="https://vietis.co.jp/wp/wp-content/themes/vietis/images/picture_15.jpg" alt="" loading="eager" />
       </div></div>
     </div>
   </div>
