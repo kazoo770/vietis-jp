@@ -93,28 +93,38 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
 /* POSITIONS ACCORDION */
 .positions-list{margin-top:48px;border-top:1px solid var(--border)}
-.position-item{border-bottom:1px solid var(--border)}
-.position-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 0;background:none;border:none;cursor:pointer;text-align:left;transition:background 0.15s}
-.position-trigger:hover{background:none}
+.position-item{border-bottom:1px solid var(--border);transition:background 0.25s var(--ease)}
+.position-item.open{background:var(--bg-off)}
+.position-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 0;background:none;border:none;cursor:pointer;text-align:left;transition:transform 0.1s var(--ease)}
+.position-trigger:active{transform:scale(0.995)}
 .position-trigger-left{display:flex;align-items:center;gap:20px}
-.position-tag{font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--blue);background:var(--blue-pale);padding:4px 10px;border-radius:2px;white-space:nowrap;flex-shrink:0;width:88px;text-align:center}
-.position-title{font-size:clamp(16px,1.8vw,20px);font-weight:700;color:var(--ink);line-height:1.3}
+.position-tag{font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--blue);background:var(--blue-pale);padding:4px 12px;border-radius:2px;white-space:nowrap;flex-shrink:0;min-width:72px;text-align:center;transition:background 0.22s var(--ease),color 0.22s var(--ease)}
+.position-item.open .position-tag{background:var(--blue);color:#fff}
+.position-title{font-size:clamp(16px,1.8vw,20px);font-weight:700;color:var(--ink);line-height:1.3;transition:color 0.18s}
+.position-trigger:hover .position-title{color:var(--blue)}
 .position-title-en{font-size:13px;font-weight:400;color:var(--subtle);margin-top:3px;font-family:var(--en)}
 .position-meta{display:flex;align-items:center;gap:16px;flex-shrink:0}
 .position-location{font-size:12px;color:var(--subtle);white-space:nowrap}
-.position-chevron{width:20px;height:20px;flex-shrink:0;color:var(--subtle);transition:transform 0.25s var(--ease)}
-.position-item.open .position-chevron{transform:rotate(180deg)}
-.position-body{display:none;padding:0 0 32px}
-.position-item.open .position-body{display:block}
+.position-chevron{width:20px;height:20px;flex-shrink:0;color:var(--subtle);transition:transform 0.35s cubic-bezier(0.23,1,0.32,1),color 0.22s}
+.position-item.open .position-chevron{transform:rotate(180deg);color:var(--blue)}
+.position-body-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.22s cubic-bezier(0.4,0,1,1)}
+.position-item.open .position-body-wrap{grid-template-rows:1fr;transition:grid-template-rows 0.42s cubic-bezier(0.23,1,0.32,1)}
+.position-body{overflow:hidden;min-height:0}
+.position-body-inner{padding:4px 0 32px}
 .position-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.position-section-title{font-size:12px;font-weight:700;letter-spacing:0.06em;color:var(--subtle);margin-bottom:12px;font-family:var(--en)}
+.position-body-inner>*{opacity:0;transform:translateY(8px);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease)}
+.position-item.open .position-body-inner>*{opacity:1;transform:none}
+.position-item.open .position-body-inner>*:nth-child(1){transition-delay:0.14s}
+.position-item.open .position-body-inner>*:nth-child(2){transition-delay:0.22s}
+.position-section-title{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--subtle);margin-bottom:12px;font-family:var(--en)}
 .position-body-text{font-size:15px;color:var(--ink);line-height:1.85}
 .position-skill-list{display:flex;flex-direction:column;gap:8px}
 .position-skill-item{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--ink);line-height:1.6}
 .position-skill-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:8px}
-.position-apply{margin-top:28px;background:var(--bg-off);border-radius:var(--r);padding:16px 20px;display:flex;align-items:center;gap:16px}
+.position-apply{margin-top:20px;border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .position-apply-loc{font-size:13px;color:var(--muted)}
 .position-apply-loc strong{color:var(--ink);font-weight:700}
+@media(prefers-reduced-motion:reduce){.position-body-wrap,.position-chevron,.position-item,.position-tag,.position-title{transition:none!important}.position-body-inner>*{transition:none!important;opacity:1!important;transform:none!important}}
 
 /* INQUIRY SECTION */
 .inquiry-block{background:var(--bg-off);border:1px solid var(--border);border-radius:var(--r);padding:clamp(32px,4vw,56px);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
@@ -210,7 +220,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -230,7 +240,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -247,7 +257,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -267,7 +277,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京 / ベトナム（ハノイ）</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -284,7 +294,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -304,7 +314,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京 / ベトナム（ハノイ）</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -321,7 +331,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -341,7 +351,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京 / ベトナム（ハノイ）</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -358,7 +368,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -378,7 +388,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>ベトナム（ハノイ）</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -395,7 +405,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -415,7 +425,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京 / ベトナム（ハノイ）</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -432,7 +442,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -452,7 +462,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京 / ベトナム（ハノイ）</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
       <div className="position-item reveal">
@@ -469,7 +479,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
           </div>
         </button>
-        <div className="position-body">
+        <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
               <p className="position-section-title">RESPONSIBILITIES</p>
@@ -489,7 +499,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
             <p className="position-apply-loc">募集場所：<strong>東京</strong></p>
             <a href="mailto:recruit@vietis.co.jp" className="btn btn-dark" style={{fontSize: '13px', padding: '10px 20px'}}>応募・問い合わせ <span className="btn-arrow">↗</span></a>
           </div>
-        </div>
+        </div></div></div>
       </div>
 
 
