@@ -68,12 +68,14 @@ function initAccordion(pattern: typeof PATTERNS[number]) {
     const toggle = () => {
       const isOpen = item.classList.contains('open');
 
-      // READ フェーズ: 書き込みより前に scrollHeight を読む（forced reflow 防止）
+      // READ フェーズ: DOM 書き込み前にまとめて読む（forced reflow 防止）
       const targetHeight = !isOpen && pattern.useMaxHeight && inner
         ? inner.scrollHeight
         : 0;
+      // クリックしたアイテムの現在の画面上の位置を記録
+      const anchorTop = item.getBoundingClientRect().top;
 
-      // WRITE フェーズ: 読み取り完了後にまとめて DOM を変更
+      // WRITE フェーズ
       bound.forEach(b => {
         b.item.classList.remove('open');
         b.trigger.setAttribute('aria-expanded', 'false');
@@ -87,6 +89,10 @@ function initAccordion(pattern: typeof PATTERNS[number]) {
           body.style.maxHeight = targetHeight + 'px';
         }
       }
+
+      // DOM 変更後にアイテムの位置ズレ分だけスクロールを補正し、画面上で静止させる
+      const delta = item.getBoundingClientRect().top - anchorTop;
+      if (delta !== 0) window.scrollBy({ top: delta, behavior: 'instant' });
     };
 
     trigger.addEventListener('click', toggle);
