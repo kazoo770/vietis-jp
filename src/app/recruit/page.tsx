@@ -113,7 +113,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .position-item.open .position-body-inner>*{opacity:1;transform:none}
 .position-item.open .position-body-inner>*:nth-child(1){transition-delay:0.14s}
 .position-item.open .position-body-inner>*:nth-child(2){transition-delay:0.22s}
-.position-section-title{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--subtle);margin-bottom:12px;font-family:var(--en)}
+.position-section-title{font-size:11px;font-weight:700;letter-spacing:0.04em;color:var(--subtle);margin-bottom:12px}
 .position-body-text{font-size:15px;color:var(--ink);line-height:1.85}
 .position-skill-list{display:flex;flex-direction:column;gap:8px}
 .position-skill-item{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--ink);line-height:1.6}
@@ -217,11 +217,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">AI/DX関連サービスの新規開拓・既存顧客深耕を担当します。クライアントの課題をヒアリングし、最適なサービスを提案します。技術的な知識がなくても、入社後にキャッチアップできる環境を整えています。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">法人営業の実務経験（2年以上）</li>
                 <li className="position-skill-item">IT / SaaS / コンサルティング業界の経験（あれば優遇）</li>
@@ -251,11 +251,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">生成AI・RAG・LLMを活用したシステムの設計・開発・実装を担当します。クライアントの業務課題を技術的に解決するPoC設計から本番実装まで一貫して携わります。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">Pythonを用いたバックエンド開発経験</li>
                 <li className="position-skill-item">OpenAI / Azure OpenAI / Anthropic等のLLM APIの実装経験（あれば優遇）</li>
@@ -285,11 +285,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">React / Next.jsを用いたWebシステム・業務アプリ・AIシステムのUI開発を担当します。デザインの意図を理解しながら、高品質なフロントエンドを実装します。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">Reactを用いた開発経験（1年以上）</li>
                 <li className="position-skill-item">TypeScriptの実務経験（あれば優遇）</li>
@@ -319,11 +319,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">PHP / Python / Node.js等を用いたWebシステム・業務システムのバックエンド開発を担当します。API設計・DB設計から実装・テストまで幅広く携わります。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">PHP / Python / Node.jsのいずれかを用いた開発経験</li>
                 <li className="position-skill-item">Laravel / Django / NestJS等のフレームワーク経験（あれば優遇）</li>
@@ -353,11 +353,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">Flutter / React Nativeを用いたiOS・Androidアプリの開発を担当します。クライアントの要件をもとに、設計・実装・テスト・ストアリリースまで一貫して対応します。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">Flutter または React Nativeを用いたアプリ開発経験</li>
                 <li className="position-skill-item">iOS / Androidいずれかのネイティブ開発経験（あれば優遇）</li>
@@ -387,11 +387,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">WebシステムやアプリのUI設計・デザインを担当します。クライアントのブランドや要件をもとに、使いやすく美しいインターフェースを設計します。エンジニアと密に連携しながら実装まで伴走します。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">Figmaを用いたUI設計・デザイン経験</li>
                 <li className="position-skill-item">WebサイトやWebアプリのデザイン実務経験</li>
@@ -421,11 +421,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">クライアントとの要件定義から、開発チームのマネジメント、進捗管理・品質管理まで一貫して担当します。AI・DX関連プロジェクトを中心に、エンジニアとクライアントの橋渡し役を担います。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">Webシステム・アプリ開発のPM経験（2年以上）</li>
                 <li className="position-skill-item">要件定義・スケジュール管理・リスク管理の実務経験</li>
@@ -455,11 +455,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
         <div className="position-body-wrap"><div className="position-body"><div className="position-body-inner">
           <div className="position-grid">
             <div>
-              <p className="position-section-title">RESPONSIBILITIES</p>
+              <p className="position-section-title">仕事内容</p>
               <p className="position-body-text">クライアントのAI活用・DX推進を支援するコンサルタントです。現状ヒアリング・課題整理・ロードマップ策定から、実装フェーズの伴走まで一貫して担います。</p>
             </div>
             <div>
-              <p className="position-section-title">REQUIREMENTS</p>
+              <p className="position-section-title">求めるスキル</p>
               <ul className="position-skill-list">
                 <li className="position-skill-item">ITコンサルティングまたは業務改善の実務経験</li>
                 <li className="position-skill-item">AI・DXに関する基礎知識（あれば優遇）</li>
