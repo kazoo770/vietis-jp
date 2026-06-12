@@ -82,8 +82,25 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .mobile-nav-actions .btn{width:100%;justify-content:center}
 
 /* PAGE HERO */
-.page-hero{padding-top:72px;border-bottom:1px solid var(--border)}
-.page-hero-inner{padding:clamp(56px,8vw,100px) 0 clamp(48px,7vw,80px)}
+.page-hero{padding-top:72px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.page-hero-inner{padding:clamp(56px,8vw,100px) 0 clamp(48px,7vw,80px);position:relative;z-index:2;max-width:52%}
+
+/* HERO PHOTO MOSAIC */
+.hero-photos{position:absolute;right:0;top:0;bottom:0;width:60%;pointer-events:none}
+.hero-photos::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,#fff 0%,rgba(255,255,255,0.9) 18%,rgba(255,255,255,0) 55%);z-index:2}
+.photo-grid{position:absolute;inset:-30% 0 -30% 0;display:flex;gap:12px;transform:rotate(-12deg);transform-origin:center center}
+.photo-col{flex-shrink:0}
+.photo-strip{display:flex;flex-direction:column;gap:12px}
+.photo-strip img{width:176px;height:235px;object-fit:cover;border-radius:6px;display:block}
+.photo-strip--down{animation:recruit-down 32s linear infinite}
+.photo-strip--up{animation:recruit-up 28s linear infinite}
+.photo-col:nth-child(2) .photo-strip{animation-duration:38s;animation-delay:-10s}
+.photo-col:nth-child(3) .photo-strip{animation-duration:30s;animation-delay:-18s}
+.photo-col:nth-child(4) .photo-strip{animation-duration:36s;animation-delay:-5s}
+.photo-col:nth-child(5) .photo-strip{animation-duration:34s;animation-delay:-24s}
+@keyframes recruit-down{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+@keyframes recruit-up{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@media(prefers-reduced-motion:reduce){.photo-strip{animation:none!important}}
 
 
 
@@ -180,11 +197,37 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
   .position-location{display:none}
   .cta-band-inner{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
+  .hero-photos{display:none}
+  .page-hero-inner{max-width:100%}
 }
 @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
 
       `}</style>
 <div className="page-hero">
+  <div className="hero-photos" aria-hidden="true">
+    <div className="photo-grid">
+      <div className="photo-col"><div className="photo-strip photo-strip--down">
+        <img src="https://picsum.photos/seed/rec-a1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a4/176/235" alt="" loading="eager" />
+        <img src="https://picsum.photos/seed/rec-a1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-a4/176/235" alt="" loading="eager" />
+      </div></div>
+      <div className="photo-col"><div className="photo-strip photo-strip--up">
+        <img src="https://picsum.photos/seed/rec-b1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b4/176/235" alt="" loading="eager" />
+        <img src="https://picsum.photos/seed/rec-b1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-b4/176/235" alt="" loading="eager" />
+      </div></div>
+      <div className="photo-col"><div className="photo-strip photo-strip--down">
+        <img src="https://picsum.photos/seed/rec-c1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c4/176/235" alt="" loading="eager" />
+        <img src="https://picsum.photos/seed/rec-c1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-c4/176/235" alt="" loading="eager" />
+      </div></div>
+      <div className="photo-col"><div className="photo-strip photo-strip--up">
+        <img src="https://picsum.photos/seed/rec-d1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d4/176/235" alt="" loading="eager" />
+        <img src="https://picsum.photos/seed/rec-d1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-d4/176/235" alt="" loading="eager" />
+      </div></div>
+      <div className="photo-col"><div className="photo-strip photo-strip--down">
+        <img src="https://picsum.photos/seed/rec-e1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e4/176/235" alt="" loading="eager" />
+        <img src="https://picsum.photos/seed/rec-e1/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e2/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e3/176/235" alt="" loading="eager" /><img src="https://picsum.photos/seed/rec-e4/176/235" alt="" loading="eager" />
+      </div></div>
+    </div>
+  </div>
   <div className="wrap">
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><span aria-current="page">採用</span></nav>
