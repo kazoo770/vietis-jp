@@ -83,7 +83,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
 /* PAGE HERO */
 .page-hero{padding-top:72px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.page-hero-inner{padding:clamp(60px,9vw,120px) 0 clamp(48px,7vw,96px);position:relative;z-index:2;max-width:40%}
+.page-hero-inner{padding:clamp(80px,11vw,160px) 0 clamp(72px,10vw,140px);position:relative;z-index:2;max-width:40%}
 
 /* HERO PHOTO MOSAIC */
 .hero-photos{position:absolute;right:0;top:0;bottom:0;width:60%;pointer-events:none}
