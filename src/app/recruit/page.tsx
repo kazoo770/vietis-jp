@@ -92,14 +92,11 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .page-hero-sub{font-size:clamp(15px,1.5vw,18px);color:var(--muted);line-height:1.85;text-wrap:pretty;max-width:680px}
 
 /* POSITIONS ACCORDION */
-.positions-list{margin-top:48px;border-top:1px solid var(--border)}
-.position-item{border-bottom:1px solid var(--border);transition:background 0.25s var(--ease)}
-.position-item.open{background:var(--bg-off)}
-.position-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 0;background:none;border:none;cursor:pointer;text-align:left;transition:transform 0.1s var(--ease)}
+.positions-list{margin-top:40px;display:flex;flex-direction:column;gap:10px}
+.position-item{border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color 0.25s var(--ease),background 0.25s var(--ease)}
+.position-item.open{background:var(--bg-off);border-color:rgba(43,73,231,0.25)}
+.position-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 24px;background:none;border:none;cursor:pointer;text-align:left;transition:transform 0.1s var(--ease)}
 .position-trigger:active{transform:scale(0.995)}
-.position-trigger-left{display:flex;align-items:center;gap:20px}
-.position-tag{font-family:var(--en);font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--blue);background:var(--blue-pale);padding:4px 12px;border-radius:2px;white-space:nowrap;flex-shrink:0;min-width:72px;text-align:center;transition:background 0.22s var(--ease),color 0.22s var(--ease)}
-.position-item.open .position-tag{background:var(--blue);color:#fff}
 .position-title{font-size:clamp(16px,1.8vw,20px);font-weight:700;color:var(--ink);line-height:1.3;transition:color 0.18s}
 .position-trigger:hover .position-title{color:var(--blue)}
 .position-title-en{font-size:13px;font-weight:400;color:var(--subtle);margin-top:3px;font-family:var(--en)}
@@ -110,7 +107,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .position-body-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.22s cubic-bezier(0.4,0,1,1)}
 .position-item.open .position-body-wrap{grid-template-rows:1fr;transition:grid-template-rows 0.42s cubic-bezier(0.23,1,0.32,1)}
 .position-body{overflow:hidden;min-height:0}
-.position-body-inner{padding:4px 0 32px}
+.position-body-inner{padding:0 24px 24px}
 .position-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .position-body-inner>*{opacity:0;transform:translateY(8px);transition:opacity 0.3s var(--ease),transform 0.3s var(--ease)}
 .position-item.open .position-body-inner>*{opacity:1;transform:none}
@@ -124,7 +121,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .position-apply{margin-top:20px;border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .position-apply-loc{font-size:13px;color:var(--muted)}
 .position-apply-loc strong{color:var(--ink);font-weight:700}
-@media(prefers-reduced-motion:reduce){.position-body-wrap,.position-chevron,.position-item,.position-tag,.position-title{transition:none!important}.position-body-inner>*{transition:none!important;opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.position-body-wrap,.position-chevron,.position-item,.position-title{transition:none!important}.position-body-inner>*{transition:none!important;opacity:1!important;transform:none!important}}
 
 /* INQUIRY SECTION */
 .inquiry-block{background:var(--bg-off);border:1px solid var(--border);border-radius:var(--r);padding:clamp(32px,4vw,56px);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
@@ -208,13 +205,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">SALES</span>
-            <div>
+          <div>
               <div className="position-title">営業 / セールス</div>
               <div className="position-title-en">Sales</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -245,13 +239,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">AI</span>
-            <div>
+          <div>
               <div className="position-title">AIエンジニア</div>
               <div className="position-title-en">AI Engineer</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京 / ハノイ</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -282,13 +273,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">FRONTEND</span>
-            <div>
+          <div>
               <div className="position-title">Webエンジニア（フロントエンド）</div>
               <div className="position-title-en">Frontend Engineer</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京 / ハノイ</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -319,13 +307,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">BACKEND</span>
-            <div>
+          <div>
               <div className="position-title">Webエンジニア（バックエンド）</div>
               <div className="position-title-en">Backend Engineer</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京 / ハノイ</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -356,13 +341,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">MOBILE</span>
-            <div>
+          <div>
               <div className="position-title">モバイルアプリエンジニア</div>
               <div className="position-title-en">Mobile App Engineer</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">ハノイ</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -393,13 +375,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">DESIGN</span>
-            <div>
+          <div>
               <div className="position-title">UIデザイナー</div>
               <div className="position-title-en">UI Designer</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京 / ハノイ</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -430,13 +409,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">PM</span>
-            <div>
+          <div>
               <div className="position-title">PM / プロジェクトマネージャー</div>
               <div className="position-title-en">Project Manager</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京 / ハノイ</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
@@ -467,13 +443,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
       <div className="position-item reveal">
         <button className="position-trigger" aria-expanded="false">
-          <div className="position-trigger-left">
-            <span className="position-tag">CONSULTING</span>
-            <div>
+          <div>
               <div className="position-title">DX / AIコンサルタント</div>
               <div className="position-title-en">DX / AI Consultant</div>
             </div>
-          </div>
           <div className="position-meta">
             <span className="position-location">東京</span>
             <svg className="position-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7.5l5 5 5-5"/></svg>
