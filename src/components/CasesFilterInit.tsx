@@ -26,9 +26,22 @@ export default function CasesFilterInit() {
       if (noResults) noResults.classList.toggle('show', visible === 0);
     }
 
+    const filterBar = document.getElementById('filter-bar');
+    const casesMain = document.querySelector<HTMLElement>('.cases-main');
+
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         applyFilter(btn.dataset.filter ?? 'all', btn.dataset.value ?? 'all');
+
+        // フィルターバーより下にいる場合のみ、ケース一覧の先頭へスクロール
+        if (casesMain && filterBar) {
+          const filterBottom = filterBar.getBoundingClientRect().bottom;
+          const casesTop = casesMain.getBoundingClientRect().top;
+          if (casesTop < filterBottom) {
+            const targetY = window.scrollY + casesTop - filterBar.offsetHeight - 16;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+          }
+        }
       });
     });
   }, []);
