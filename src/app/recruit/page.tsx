@@ -197,7 +197,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
   .cta-band-inner{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
   .page-hero{display:flex;flex-direction:column}
-  .page-hero .wrap{order:1}
+  .page-hero .wrap{order:1;width:100%}
   .page-hero-inner{width:100%!important;max-width:100%!important;padding:20px 0 28px;text-align:left;margin-left:0!important}
   .hero-photos{position:relative;width:100%;height:200px;order:0;flex-shrink:0;overflow:hidden}
   .photo-grid{inset:-25% 0 -25% 0;transform:rotate(-6deg)}
