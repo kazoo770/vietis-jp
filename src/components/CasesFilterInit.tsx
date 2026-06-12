@@ -29,7 +29,11 @@ export default function CasesFilterInit() {
     const filterBar = document.getElementById('filter-bar');
     const casesMain = document.querySelector<HTMLElement>('.cases-main');
 
+    const reset = () => applyFilter('all', 'all');
+    window.addEventListener('cases-reset', reset);
+
     btns.forEach(btn => {
+
       btn.addEventListener('click', () => {
         applyFilter(btn.dataset.filter ?? 'all', btn.dataset.value ?? 'all');
 
@@ -44,6 +48,8 @@ export default function CasesFilterInit() {
         }
       });
     });
+
+    return () => window.removeEventListener('cases-reset', reset);
   }, []);
 
   return null;

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const LogoSVG = ({ color = '#2B49E7' }: { color?: string }) => (
   <svg width="350" height="61" viewBox="0 0 350 61" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -23,6 +24,15 @@ export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+
+  const handleCasesClick = (e: React.MouseEvent) => {
+    if (pathname === '/cases' || pathname === '/cases/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.dispatchEvent(new CustomEvent('cases-reset'));
+    }
+  };
 
   useEffect(() => {
     const header = headerRef.current;
@@ -63,7 +73,7 @@ export default function Header() {
           <nav className="header-nav" aria-label="メインナビゲーション">
             <Link href="/service/">サービス</Link>
             <Link href="/product/">プロダクト</Link>
-            <Link href="/cases/">実績</Link>
+            <Link href="/cases/" onClick={handleCasesClick}>実績</Link>
             <Link href="/about/">企業情報</Link>
             <Link href="/blog/">ブログ</Link>
             <Link href="/recruit/">採用</Link>
@@ -89,7 +99,7 @@ export default function Header() {
         <div className="mobile-nav-list">
           <Link href="/service/">サービス</Link>
           <Link href="/product/">プロダクト</Link>
-          <Link href="/cases/">実績</Link>
+          <Link href="/cases/" onClick={handleCasesClick}>実績</Link>
           <Link href="/about/">企業情報</Link>
           <Link href="/blog/">ブログ</Link>
           <Link href="/recruit/">採用</Link>
