@@ -88,13 +88,12 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 /* FILTER */
 .filter-bar{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:50}
 .filter-inner{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.filter-row{display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 0;-webkit-overflow-scrolling:touch;touch-action:pan-x}
-.filter-row:first-child{border-bottom:none}
+.filter-row{display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px 0;-webkit-overflow-scrolling:touch;touch-action:pan-x}
 .filter-row::-webkit-scrollbar{display:none}
-.filter-label{font-size:11px;font-weight:700;color:var(--subtle);letter-spacing:0.04em;white-space:nowrap;flex-shrink:0;font-family:var(--ja);min-width:54px;text-align:justify;text-align-last:justify;border-right:1px solid var(--border);padding-right:14px;margin-right:4px}
 .filter-btn{font-size:12px;font-weight:700;color:var(--muted);padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);background:none;white-space:nowrap;cursor:pointer;transition:color 0.15s,background 0.15s,border-color 0.15s;font-family:var(--ja);flex-shrink:0;line-height:1.5}
 .filter-btn.active{color:var(--blue);background:var(--blue-pale);border-color:var(--blue)}
 .filter-btn:hover:not(.active){color:var(--ink);border-color:var(--ink)}
+.filter-sep{width:1px;height:18px;background:var(--border);flex-shrink:0;margin:0 4px}
 
 /* CASES MAIN */
 .cases-main{padding:clamp(40px,5vw,64px) 0 clamp(64px,8vw,96px)}
@@ -192,18 +191,15 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
 <div className="filter-bar" id="filter-bar">
   <div className="filter-inner">
-    <div className="filter-row" role="group" aria-label="開発カテゴリで絞り込む">
-      <span className="filter-label">開発種別</span>
-      <button className="filter-btn active" data-filter="cat" data-value="all">すべて</button>
+    <div className="filter-row" role="group" aria-label="絞り込む">
+      <button className="filter-btn active" data-filter="all" data-value="all">すべて</button>
+      <span className="filter-sep" aria-hidden="true"></span>
       <button className="filter-btn" data-filter="cat" data-value="web">Webシステム</button>
       <button className="filter-btn" data-filter="cat" data-value="ai">AI</button>
       <button className="filter-btn" data-filter="cat" data-value="app">アプリ</button>
       <button className="filter-btn" data-filter="cat" data-value="line">LINEアプリ</button>
       <button className="filter-btn" data-filter="cat" data-value="cms">CMS</button>
-    </div>
-    <div className="filter-row" role="group" aria-label="分野で絞り込む">
-      <span className="filter-label">業種分野</span>
-      <button className="filter-btn active" data-filter="ind" data-value="all">すべて</button>
+      <span className="filter-sep" aria-hidden="true"></span>
       <button className="filter-btn" data-filter="ind" data-value="dx">業務改善・DX</button>
       <button className="filter-btn" data-filter="ind" data-value="edu">教育</button>
       <button className="filter-btn" data-filter="ind" data-value="fin">金融・決済</button>
