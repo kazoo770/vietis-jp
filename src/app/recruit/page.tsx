@@ -83,11 +83,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 
 /* PAGE HERO */
 .page-hero{padding-top:72px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.page-hero-inner{padding:clamp(56px,8vw,100px) 0 clamp(48px,7vw,80px);position:relative;z-index:2;max-width:52%}
+.page-hero-inner{padding:clamp(56px,8vw,100px) 0 clamp(48px,7vw,80px);position:relative;z-index:2;max-width:40%}
 
 /* HERO PHOTO MOSAIC */
 .hero-photos{position:absolute;right:0;top:0;bottom:0;width:60%;pointer-events:none}
-.hero-photos::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,#fff 0%,rgba(255,255,255,0.9) 18%,rgba(255,255,255,0) 55%);z-index:2}
 .photo-grid{position:absolute;inset:-30% 0 -30% 0;display:flex;gap:12px;transform:rotate(-12deg);transform-origin:center center}
 .photo-col{flex-shrink:0}
 .photo-strip{display:flex;flex-direction:column;gap:12px}
@@ -197,7 +196,10 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
   .position-location{display:none}
   .cta-band-inner{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
-  .hero-photos{display:none}
+  .page-hero{display:flex;flex-direction:column}
+  .page-hero .wrap{order:0}
+  .hero-photos{position:relative;width:100%;height:280px;order:1}
+  .photo-grid{inset:-20% 0 -20% 0;transform:rotate(-8deg)}
   .page-hero-inner{max-width:100%}
 }
 @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
@@ -237,13 +239,13 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
     <div className="page-hero-inner">
       <nav className="breadcrumb reveal"><a href="/">トップ</a><span className="breadcrumb-sep">/</span><span aria-current="page">採用</span></nav>
       <h1 className="page-hero-h1 reveal d1">採用</h1>
-      <p className="page-hero-sub reveal d2">伴走型AI/DXエージェンシーとして、戦略立案から実装・運用まで一貫して支援しています。技術と事業の両方を理解しながら、クライアントと並走できる人材を求めています。スキルや経験の幅より、自分で考えて動ける意志を大切にしています。</p>
     </div>
   </div>
 </div>
 
 <section className="section">
   <div className="wrap">
+    <p className="recruit-lead reveal" style={{fontSize:'clamp(16px,1.6vw,20px)',fontWeight:700,color:'var(--ink)',lineHeight:1.85,maxWidth:'52ch',marginBottom:'clamp(40px,5vw,64px)'}}>伴走型AI/DXエージェンシーとして、戦略立案から実装・運用まで一貫して支援しています。技術と事業の両方を理解しながら、クライアントと並走できる人材を求めています。スキルや経験の幅より、自分で考えて動ける意志を大切にしています。</p>
     <h2 className="h2 reveal">募集職種</h2>
     <p className="body-lead reveal d1" style={{marginTop: '16px', whiteSpace: 'nowrap'}}>東京・ベトナム・福岡・米国と国際的な環境で、ともに挑戦できる仲間を募集しています。</p>
 
