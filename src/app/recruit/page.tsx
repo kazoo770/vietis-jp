@@ -198,9 +198,9 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
   .footer-top{grid-template-columns:1fr 1fr}
   .page-hero{display:flex;flex-direction:column}
   .page-hero .wrap{order:0}
-  .hero-photos{position:relative;width:100%;height:280px;order:1}
-  .photo-grid{inset:-20% 0 -20% 0;transform:rotate(-8deg)}
-  .page-hero-inner{max-width:100%}
+  .page-hero-inner{max-width:100%;padding:32px 0 24px}
+  .hero-photos{position:relative;width:100%;height:240px;order:1;flex-shrink:0}
+  .photo-grid{inset:-25% 0 -25% 0;transform:rotate(-6deg)}
 }
 @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
 
