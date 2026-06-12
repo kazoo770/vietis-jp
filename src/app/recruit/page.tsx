@@ -109,7 +109,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
 .position-body{overflow:hidden;min-height:0}
 .position-body-inner{padding:0 24px 24px}
 .position-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.position-body-inner>*{opacity:0;transform:translateY(6px);transition:opacity 0.25s var(--ease),transform 0.25s var(--ease)}
+.position-body-inner>*{opacity:0;transform:translateY(6px);transition:opacity 0.15s var(--ease),transform 0.15s var(--ease)}
 .position-item.open .position-body-inner>*{opacity:1;transform:none}
 .position-section-title{font-size:11px;font-weight:700;letter-spacing:0.04em;color:var(--subtle);margin-bottom:12px}
 .position-body-text{font-size:15px;color:var(--ink);line-height:1.85}
