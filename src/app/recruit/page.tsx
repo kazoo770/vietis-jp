@@ -199,7 +199,7 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
   .page-hero{display:flex;flex-direction:column}
   .page-hero .wrap{order:1}
   .page-hero-inner{max-width:100%;padding:20px 0 28px}
-  .hero-photos{position:relative;width:100%;height:200px;order:0;flex-shrink:0}
+  .hero-photos{position:relative;width:100%;height:200px;order:0;flex-shrink:0;overflow:hidden}
   .photo-grid{inset:-25% 0 -25% 0;transform:rotate(-6deg)}
 }
 @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
