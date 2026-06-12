@@ -197,9 +197,9 @@ html.js-ready .reveal.d4{transition-delay:0.28s}
   .cta-band-inner{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
   .page-hero{display:flex;flex-direction:column}
-  .page-hero .wrap{order:0}
-  .page-hero-inner{max-width:100%;padding:32px 0 24px}
-  .hero-photos{position:relative;width:100%;height:240px;order:1;flex-shrink:0}
+  .page-hero .wrap{order:1}
+  .page-hero-inner{max-width:100%;padding:20px 0 28px}
+  .hero-photos{position:relative;width:100%;height:200px;order:0;flex-shrink:0}
   .photo-grid{inset:-25% 0 -25% 0;transform:rotate(-6deg)}
 }
 @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
